@@ -38,7 +38,7 @@ namespace Open.Tests.Archetypes.RuleClasses {
             Assert.IsFalse(Obj.IsNotLess(s));
             Assert.IsTrue(Obj.IsNotLess(Obj.Value));
         }
-        /*[TestMethod]*/ public void ConvertTest() {
+        /*[TestMethod]*/ public void ConvertTest() {  //TODO: Fix test
             var s = GetRandom.Double();
             var s1 = Obj.Convert(s.ToString(UseCulture.Invariant));
             Assert.AreEqual(s.ToString(UseCulture.Invariant), s1.ToString(UseCulture.Invariant));
