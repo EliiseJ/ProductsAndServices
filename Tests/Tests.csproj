@@ -132,8 +132,8 @@
     <Compile Include="IsLogicTested.cs" />
     <Compile Include="IsTestedBase.cs" />
     <Compile Include="Logic\DummyTests.cs" />
-    <Compile Include="Logic\PackageTypeTests.cs" />
-    <Compile Include="Logic\PricingStrategyTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PackageTypeTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PricingStrategyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="CommonTests.cs" />

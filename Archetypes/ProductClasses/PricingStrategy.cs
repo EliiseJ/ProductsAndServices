@@ -1,4 +1,4 @@
-﻿namespace Logic
+﻿namespace Archetypes.ProductClasses
 {
     public enum PricingStrategy
     {

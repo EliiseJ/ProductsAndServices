@@ -1,8 +1,8 @@
 ﻿using System;
-using Logic;
+using Archetypes.ProductClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Logic
+namespace Tests.Archetypes.ProductClasses
 {
     [TestClass]
     public class PricingStrategyTests
