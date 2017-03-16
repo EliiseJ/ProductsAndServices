@@ -68,8 +68,12 @@
     <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
     <Compile Include="ProductClasses\PackageType.cs" />
+    <Compile Include="ProductClasses\Price.cs" />
+    <Compile Include="ProductClasses\Prices.cs" />
     <Compile Include="ProductClasses\PricingStrategy.cs" />
     <Compile Include="ProductClasses\Product.cs" />
+    <Compile Include="ProductClasses\ProductType.cs" />
+    <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />
     <Compile Include="ProductClasses\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +99,7 @@
     <Compile Include="RuleClasses\Operation.cs" />
     <Compile Include="RuleClasses\Operator.cs" />
     <Compile Include="RuleClasses\Rule.cs" />
+    <Compile Include="RuleClasses\RuleContext.cs" />
     <Compile Include="RuleClasses\RuleElement.cs" />
     <Compile Include="RuleClasses\StringVariable.cs" />
     <Compile Include="RuleClasses\Variable.cs" />
