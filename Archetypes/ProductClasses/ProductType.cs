@@ -1,8 +1,9 @@
-﻿using Open.Archetypes.BaseClasses;
+﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductType: BaseType<ProductType>
+    public class ProductType : BaseType<ProductType>
     {
         private string name;
         private string description;
@@ -16,7 +17,7 @@ namespace Open.Archetypes.ProductClasses
         public string Name
         {
             get { return SetDefault(ref name); }
-            set { SetValue(ref name, value);}
+            set { SetValue(ref name, value); }
         }
 
         public string Description
@@ -25,9 +26,24 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref description, value); }
         }
 
-        public override ProductType Type => ProductTypes.Find(productId);
+        public static ProductType Random()
+        {
+            var e = new ProductType();
+            e.SetRandomValues();
+            return e;
+        }
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
+            ProductId = GetRandom.String();
+        }
+        public override ProductType Type => ProductTypes.Find(TypeId);
+
+
+
 
         //tegemata: getPrices(context: RuleContext):Price[]
+
 
     }
 }

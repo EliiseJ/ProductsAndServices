@@ -96,6 +96,7 @@
     <Compile Include="Archetypes\ProductClasses\CanceledServiceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\CompletedServiceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ExecutingServiceTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductTypeTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ScheduledServiceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ServiceTests.cs" />
     <Compile Include="Archetypes\QuantityClasses\QuantityTests.cs" />
