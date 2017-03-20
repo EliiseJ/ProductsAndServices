@@ -72,6 +72,9 @@
     <Compile Include="ProductClasses\Prices.cs" />
     <Compile Include="ProductClasses\PricingStrategy.cs" />
     <Compile Include="ProductClasses\Product.cs" />
+    <Compile Include="ProductClasses\ProductIdentifier.cs" />
+    <Compile Include="ProductClasses\ProductInstance.cs" />
+    <Compile Include="ProductClasses\ProductInstances.cs" />
     <Compile Include="ProductClasses\ProductType.cs" />
     <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />

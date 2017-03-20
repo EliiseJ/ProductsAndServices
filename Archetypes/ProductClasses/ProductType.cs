@@ -41,7 +41,6 @@ namespace Open.Archetypes.ProductClasses
 
 
 
-
         //tegemata: getPrices(context: RuleContext):Price[]
 
 
