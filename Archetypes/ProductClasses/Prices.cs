@@ -1,6 +1,9 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Archetypes.BaseClasses;
+
+namespace Open.Archetypes.ProductClasses
 {
-    class Prices
+    public class Prices : Archetypes<Price>
     {
+        public static Prices Instances { get; } = new Prices();
     }
 }

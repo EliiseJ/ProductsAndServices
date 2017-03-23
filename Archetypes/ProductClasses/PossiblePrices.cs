@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    class PossiblePrices
+    public class PossiblePrices : Archetypes<PossiblePrice>
     {
+        public static PossiblePrices Instances { get; } = new PossiblePrices();
     }
 }

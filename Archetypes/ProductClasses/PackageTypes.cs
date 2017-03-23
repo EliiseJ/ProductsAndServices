@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    class PacakageTypescs
+   public class PackageTypes : Archetypes<PackageType>
     {
+        public static PackageTypes Instances { get; } = new PackageTypes();
     }
 }

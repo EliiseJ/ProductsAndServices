@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Open.Archetypes.ProductClasses
+﻿namespace Open.Archetypes.ProductClasses
 {
-    class CatalogueEntry
+    public class CatalogueEntry
     {
+        private string Identifier { get; set; }
+        private string Description { get; set; }
+
+        public CatalogueEntry GetCategories(string identifier)
+        {
+            this.Identifier = identifier;
+            return null;
+        }
+
+        //public ProductTypes GetProductTypes(string ID)
+        //{
+        //    return ProductTypes.Instances.GetProductTypesByID(ID);
+        //}
     }
 }
