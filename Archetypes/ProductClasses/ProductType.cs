@@ -1,10 +1,17 @@
-﻿using Open.Aids;
+﻿using System;
+using Open.Aids;
 using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
     public class ProductType : BaseType<ProductType>
     {
+        private string productInstanceId;
+        public string ProductInstanceId
+        {
+            get { return SetDefault(ref productInstanceId); }
+            set { SetValue(ref productInstanceId, value); }
+        }
         private string name;
         private string description;
         private string productId;
@@ -26,6 +33,17 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref description, value); }
         }
 
+        public override ProductType Type
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+        public  ProductInstances GetProductInstances()
+        {
+            return ProductInstances.GetPerformerAA(productId);
+        }
         public static ProductType Random()
         {
             var e = new ProductType();
@@ -37,7 +55,7 @@ namespace Open.Archetypes.ProductClasses
             base.SetRandomValues();
             ProductId = GetRandom.String();
         }
-        public override ProductType Type => ProductTypes.Find(TypeId);
+        
 
 
 

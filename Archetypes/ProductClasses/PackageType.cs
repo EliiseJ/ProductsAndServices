@@ -8,10 +8,7 @@ namespace Open.Archetypes.ProductClasses
 
         public PackageType() { }
 
-        public PackageType(PricingStrategy pricingStrategy)
-        {
-            this.PricingStrategy = pricingStrategy;
-        }
+        
     }
 }
 

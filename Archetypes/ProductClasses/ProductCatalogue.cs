@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Open.Archetypes.ProductClasses
+﻿namespace Open.Archetypes.ProductClasses
 {
-    class ProductCatalogue
+    public class ProductCatalogue
     {
+        public void add(ProductType productType)
+        {
+            ProductTypes.Instance.Add(productType);
+            //ProductTypes.Instance.Find(x =>x.Name == name)
+        }
     }
 }

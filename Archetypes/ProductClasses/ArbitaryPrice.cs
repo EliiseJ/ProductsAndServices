@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Open.Archetypes.ProductClasses
 {
-    class ArbitaryPrice
+    public class ArbitaryPrice
     {
     }
 }

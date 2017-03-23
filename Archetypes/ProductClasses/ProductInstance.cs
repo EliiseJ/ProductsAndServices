@@ -1,9 +1,22 @@
-﻿using Open.Aids;
+﻿using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductInstance : ProductType
+    public class ProductInstance : Archetype
     {
+        private string productId;
+
+        public string ProductId
+        {
+            get { return SetDefault(ref productId); }
+            set { SetValue(ref productId, value); }
+        }
+        private string productInstanceId;
+        public string ProductInstanceId
+        {
+            get { return SetDefault(ref productInstanceId); }
+            set { SetValue(ref productInstanceId, value); }
+        }
         private string name;
         private string productType;
         private string price;
@@ -14,11 +27,7 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref name, value); }
         }
 
-        public string ProductType
-        {
-            get { return SetDefault(ref productType); }
-            set { SetValue(ref productType, value); }
-        }
+        public  ProductType ProductType => ProductTypes.Find(ProductInstanceId);
 
         public string Price
         {

@@ -124,6 +124,7 @@
     <None Include="Entity.cd" />
     <None Include="Open.cd" />
     <None Include="Period.cd" />
+    <None Include="ProductClasses\ClassDiagram.cd" />
     <None Include="ProductClasses\ServiceStates.cd" />
     <None Include="Roles.cd" />
     <None Include="RuleClasses\RuleElement.cd" />
