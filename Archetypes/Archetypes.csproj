@@ -67,9 +67,9 @@
     <Compile Include="ProductClasses\ArbitaryPrice.cs" />
     <Compile Include="ProductClasses\ArbitaryPrices.cs" />
     <Compile Include="ProductClasses\CanceledService.cs" />
-    <Compile Include="ProductClasses\CatalogueEntry.cs" />
-    <Compile Include="ProductClasses\CatalogueCategory.cs" />
-    <Compile Include="ProductClasses\CatalogueEntries.cs" />
+    <Compile Include="ProductClasses\CatalogEntry.cs" />
+    <Compile Include="ProductClasses\CatalogCategory.cs" />
+    <Compile Include="ProductClasses\CatalogEntries.cs" />
     <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
     <Compile Include="ProductClasses\PackageTypes.cs" />
@@ -80,8 +80,9 @@
     <Compile Include="ProductClasses\Prices.cs" />
     <Compile Include="ProductClasses\PricingStrategy.cs" />
     <Compile Include="ProductClasses\Product.cs" />
-    <Compile Include="ProductClasses\ProductCatalogue.cs" />
+    <Compile Include="ProductClasses\ProductCatalog.cs" />
     <Compile Include="ProductClasses\ProductIdentifier.cs" />
+    <Compile Include="ProductClasses\ProductIdentifiers.cs" />
     <Compile Include="ProductClasses\ProductInstance.cs" />
     <Compile Include="ProductClasses\ProductInstances.cs" />
     <Compile Include="ProductClasses\ProductType.cs" />

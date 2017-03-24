@@ -4,6 +4,6 @@ namespace Open.Archetypes.ProductClasses
 {
     public class PossiblePrices : Archetypes<PossiblePrice>
     {
-        public static PossiblePrices Instances { get; } = new PossiblePrices();
+        public static PossiblePrices Instance { get; } = new PossiblePrices();
     }
 }
