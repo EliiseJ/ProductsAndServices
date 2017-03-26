@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Archetypes.ProductClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class PackageType
+    public class PackageType : ProductType
     {
-
         public void addProductType(ProductType product)
         {
             ProductTypes.Instance.Add(product);
