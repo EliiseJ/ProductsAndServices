@@ -86,6 +86,7 @@
     <Compile Include="ProductClasses\ProductIdentifiers.cs" />
     <Compile Include="ProductClasses\ProductInstance.cs" />
     <Compile Include="ProductClasses\ProductInstances.cs" />
+    <Compile Include="ProductClasses\ProductSet.cs" />
     <Compile Include="ProductClasses\ProductType.cs" />
     <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />
