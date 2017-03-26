@@ -92,6 +92,7 @@
     <Compile Include="Archetypes\OrderClasses\OrderTests.cs" />
     <Compile Include="Archetypes\PartyClasses\PartyTests.cs" />
     <Compile Include="Archetypes\ProcessClasses\ProcessTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PackageInstanceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductInstanceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductTests.cs" />
     <Compile Include="Archetypes\ProductClasses\CanceledServiceTests.cs" />

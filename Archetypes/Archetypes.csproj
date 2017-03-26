@@ -72,6 +72,7 @@
     <Compile Include="ProductClasses\CatalogEntries.cs" />
     <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
+    <Compile Include="ProductClasses\PackageInstance.cs" />
     <Compile Include="ProductClasses\PackageTypes.cs" />
     <Compile Include="ProductClasses\PackageType.cs" />
     <Compile Include="ProductClasses\PossiblePrice.cs" />
