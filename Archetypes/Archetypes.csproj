@@ -72,6 +72,7 @@
     <Compile Include="ProductClasses\CatalogEntries.cs" />
     <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
+    <Compile Include="ProductClasses\IProduct.cs" />
     <Compile Include="ProductClasses\PackageInstance.cs" />
     <Compile Include="ProductClasses\PackageTypes.cs" />
     <Compile Include="ProductClasses\PackageType.cs" />
@@ -82,15 +83,18 @@
     <Compile Include="ProductClasses\PricingStrategy.cs" />
     <Compile Include="ProductClasses\Product.cs" />
     <Compile Include="ProductClasses\ProductCatalog.cs" />
+    <Compile Include="ProductClasses\ProductFeature.cs" />
+    <Compile Include="ProductClasses\ProductFeatures.cs" />
     <Compile Include="ProductClasses\ProductIdentifier.cs" />
     <Compile Include="ProductClasses\ProductIdentifiers.cs" />
     <Compile Include="ProductClasses\ProductInstance.cs" />
-    <Compile Include="ProductClasses\ProductInstances.cs" />
+    <Compile Include="ProductClasses\Products.cs" />
     <Compile Include="ProductClasses\ProductSet.cs" />
     <Compile Include="ProductClasses\ProductType.cs" />
     <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />
     <Compile Include="ProductClasses\Service.cs" />
+    <Compile Include="ProductClasses\ServiceType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantityClasses\Quantity.cs" />
     <Compile Include="RelationshipClasses\Relationship.cs" />
@@ -128,6 +132,7 @@
     <None Include="Open.cd" />
     <None Include="Period.cd" />
     <None Include="ProductClasses\ClassDiagram.cd" />
+    <None Include="ProductClasses\ProductAndType.cd" />
     <None Include="ProductClasses\ServiceStates.cd" />
     <None Include="Roles.cd" />
     <None Include="RuleClasses\RuleElement.cd" />

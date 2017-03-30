@@ -2,43 +2,30 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductInstance : Archetype
+    public class ProductInstance : Product<ProductType>
     {
-        private string productId;
-
-        public string ProductId
-        {
-            get { return SetDefault(ref productId); }
-            set { SetValue(ref productId, value); }
-        }
-        private string productInstanceId;
-        public string ProductInstanceId
-        {
-            get { return SetDefault(ref productInstanceId); }
-            set { SetValue(ref productInstanceId, value); }
-        }
         private string name;
-        private string productType;
-        private string price;
-
-        public string Name
+        private string serialNumber;
+        private decimal price;
+        public string SerialNumber
         {
+            get { return SetDefault(ref serialNumber); }
+            set { SetValue(ref serialNumber, value); }
+        }
+        public string Name {
             get { return SetDefault(ref name); }
             set { SetValue(ref name, value); }
         }
-
-        public  ProductType ProductType => ProductTypes.Find(ProductInstanceId);
-
-        public string Price
-        {
+        public decimal Price {
             get { return SetDefault(ref price); }
             set { SetValue(ref price, value); }
         }
-        
 
         //todo: lk7, reservation:ReservationId [0..1]
         //todo: lk7, reserve (reservationId:ReservationId)
         //todo: lk7, cancelReservation()
         //todo: lk7, getReservationStatus():ReservatonStatus
+        public override ProductType Type => ProductTypes.Find(TypeId);
+        public ProductFeatures Features => ProductFeatures.FindFeatures(UniqueId);
     }
 }

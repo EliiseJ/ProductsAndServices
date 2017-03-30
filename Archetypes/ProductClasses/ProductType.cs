@@ -6,30 +6,9 @@ namespace Open.Archetypes.ProductClasses
 {
     public class ProductType : BaseType<ProductType>
     {
-        private string catalogId;
-        public string CatalogId
-        {
-            get { return SetDefault(ref catalogId); }
-            set { SetValue(ref catalogId, value); }
-        }
-
-        private string productInstanceId;
-        public string ProductInstanceId
-        {
-            get { return SetDefault(ref productInstanceId); }
-            set { SetValue(ref productInstanceId, value); }
-        }
 
         private string name;
         private string description;
-        private string productId;
-
-        public string ProductId
-        {
-            get { return SetDefault(ref productId); }
-            set { SetValue(ref productId, value); }
-        }
-
         public string Name
         {
             get { return SetDefault(ref name); }
@@ -42,17 +21,11 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref description, value); }
         }
 
-        public override ProductType Type
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override ProductType Type => ProductTypes.Find(TypeId);
 
-        public  ProductInstances GetProductInstances()
+        public Products Instances()
         {
-            return ProductInstances.GetPerformerAA(productId);
+            return Products.GetInstances(UniqueId);
         }
 
         public static ProductType Random()
@@ -65,11 +38,12 @@ namespace Open.Archetypes.ProductClasses
         protected override void SetRandomValues()
         {
             base.SetRandomValues();
-            ProductId = GetRandom.String();
+            name = GetRandom.String();
+            description = GetRandom.String();
         }
 
 
-        
+
 
 
 

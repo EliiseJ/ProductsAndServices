@@ -2,7 +2,7 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class CatalogEntry : Archetype
+    public class CatalogEntry : BaseEntity<ProductType>
     {
         private string CatalogId { get; set; }
         private string Description { get; set; }
@@ -28,6 +28,7 @@ namespace Open.Archetypes.ProductClasses
             get { return SetDefault(ref productInstanceId); }
             set { SetValue(ref productInstanceId, value); }
         }
+
         public ProductType ProductType => ProductTypes.Find(ProductInstanceId);
 
 
@@ -36,5 +37,9 @@ namespace Open.Archetypes.ProductClasses
         //{
         //    return ProductTypes.Instances.GetProductTypesByID(ID);
         //}
+        public override ProductType Type
+        {
+            get { return ProductTypes.Find(TypeId); }
+        }
     }
 }

@@ -7,24 +7,10 @@
       <FileName>ProductClasses\ArbitaryPrice.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Open.Archetypes.ProductClasses.CatalogueEntry" Collapsed="true">
-    <Position X="6.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAA=</HashCode>
-      <FileName>ProductClasses\CatalogueEntry.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.CatalogueCategory" Collapsed="true">
-    <Position X="6.5" Y="1.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\CatalogueCategory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Open.Archetypes.ProductClasses.PackageType" Collapsed="true">
     <Position X="6.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAgAAAAAABAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>ProductClasses\PackageType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,15 +24,8 @@
   <Class Name="Open.Archetypes.ProductClasses.Price" Collapsed="true">
     <Position X="9" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAABAAAAAgAAAAIAAAAACAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\Price.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.ProductCatalogue" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\ProductCatalogue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.ProductIdentifier">
@@ -59,14 +38,14 @@
   <Class Name="Open.Archetypes.ProductClasses.ProductInstance">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABABAAAQAQAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAQEAAAAAAAABAAQAAAEEAAAAAQAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ProductInstance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.ProductType">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAABAIAAAgAAAAIAAAAAQAAAAEBAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAgAAAAIAAAAAQAAAAEBAAAQQAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ProductType.cs</FileName>
     </TypeIdentifier>
   </Class>

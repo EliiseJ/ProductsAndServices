@@ -12,12 +12,6 @@ namespace Open.Tests.Archetypes.ProductClasses
         }
         
         [TestMethod]
-        public void ProductIdTest()
-        {
-            Obj = new ProductType();
-            TestProperty(() => Obj.ProductId, x => Obj.ProductId = x);
-        }
-        [TestMethod]
         public void ProductNameTest()
         {
             Obj = new ProductType();
@@ -34,7 +28,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             Assert.IsNull(Obj.Type);
             var t = ProductType.Random();
-            t.ProductId = Obj.TypeId;
+            t.UniqueId = Obj.TypeId;
             ProductTypes.Instance.AddRange(ProductTypes.Random());
             ProductTypes.Instance.Add(t);
             Assert.AreEqual(t, Obj.Type);

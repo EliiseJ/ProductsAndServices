@@ -10,7 +10,7 @@ namespace Open.Archetypes.ProductClasses
 
         public static ProductType Find(string id)
         {
-            return Instance.Find(x => x.ProductInstanceId == id);
+            return Instance.Find(x => x.UniqueId == id);
         }
 
         public static ProductTypes Random()

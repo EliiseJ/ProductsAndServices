@@ -1,6 +1,8 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Archetypes.BaseClasses;
+
+namespace Open.Archetypes.ProductClasses
 {
-    public class ProductCatalog
+    public class ProductCatalog: Archetype
     {
         public void Add(ProductType productType)
         {
@@ -12,14 +14,16 @@
             ProductIdentifiers.Instance.Remove(productId);
         }
 
-        public void FindByCatalogId(string catalogId)
+        public ProductType FindByCatalogId(string catalogId)
         {
-            ProductTypes.Instance.Find(x => x.CatalogId == catalogId);
+            var c = CatalogEntries.Find(catalogId);
+            return ProductTypes.Find(c.TypeId);
         }
 
-        public void FindByProductId(string productId)
+        public ProductType FindByProductId(string productId)
         {
-            ProductTypes.Instance.Find(x => x.ProductId == productId);
+            var p = Products.Find(productId);
+            return ProductTypes.Find(p.TypeId);
         }
 
         public void FindByName(string name)
