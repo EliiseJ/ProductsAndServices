@@ -19,7 +19,11 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             instance = null;
         }
-
+        [TestMethod]
+        public void ConstructorTest()
+        {
+            Assert.IsNotNull(instance);
+        }
         [TestMethod]
         public void getContentsTest()
         {

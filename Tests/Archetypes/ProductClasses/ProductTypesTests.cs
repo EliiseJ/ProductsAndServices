@@ -22,7 +22,7 @@ namespace Open.Tests.Archetypes.ProductClasses
             var s = GetRandom.String();
             Assert.IsNull(ProductTypes.Find(s));
             var t = ProductType.Random();
-            t.ProductId = s;
+            t.UniqueId = s;
             ProductTypes.Instance.Add(t);
             ProductTypes.Instance.AddRange(ProductTypes.Random());
             Assert.AreEqual(t, ProductTypes.Find(s));

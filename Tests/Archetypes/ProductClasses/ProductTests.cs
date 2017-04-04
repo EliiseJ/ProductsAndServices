@@ -8,5 +8,11 @@ namespace Open.Tests.Archetypes.ProductClasses {
             var a = new Product<ProductType>().GetType().BaseType;
             Assert.AreEqual(a, typeof(Archetype));
         }
+        [TestMethod]
+        public void TypeIdTest()
+        {
+            var o = new ProductType();
+            TestProperty(() => o.TypeId, x => o.TypeId = x);
+        }
     }
 }
