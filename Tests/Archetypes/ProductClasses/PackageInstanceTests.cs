@@ -27,7 +27,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod]
         public void getContentsTest()
         {
-            Assert.IsNotNull(instance.getContents());
+            Assert.IsNotNull(instance.Contents());
         }
     }
 }
