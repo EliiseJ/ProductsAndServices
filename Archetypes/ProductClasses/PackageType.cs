@@ -20,15 +20,10 @@ namespace Open.Archetypes.ProductClasses
             return Prices.Instance.ToArray();
         }
 
-        /*public void addProductSet(ProductSet set)
-        {
-            ProductSets.Instance.Add(set);
-        }*/
-
-        /*public void addPropositionOfinclusion(PropositionOfInclusion proposition)
+        public void addProductSet(ProductSet set)
         {
             
-        }*/
+        }
 
         public Boolean validatePackage()
         {

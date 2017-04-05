@@ -1,16 +1,12 @@
-﻿using System.Linq;
-using Archetypes.ProductClasses;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Archetypes.ProductClasses;
 
-namespace Tests.Archetypes.ProductClasses
+namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]
     public class PackageTypeTests
     {
         private PackageType packageType;
-        private string expected;
-        private string actual;
 
         [TestInitialize]
         public void InitializeTest()
@@ -25,39 +21,30 @@ namespace Tests.Archetypes.ProductClasses
         }
 
         [TestMethod]
-        public void addProductTypeTest()
+        public void AddProductTypeTest()
         {
             packageType.addProductType(new ProductType());
             Assert.AreEqual(1, ProductTypes.Instance.Count);
         }
 
         [TestMethod]
-        public void getComponentsTest()
+        public void GetComponentsTest()
         {
             packageType.addProductType(new ProductType());
             Assert.AreEqual(ProductTypes.Instance.Get(0), packageType.getComponents()[0]);
         }
 
         [TestMethod]
-        public void getPricesTest()
+        public void GetPricesTest()
         {
             Prices.Instance.Add(new Price());
             Assert.AreEqual(Prices.Instance.Get(0), packageType.getPrices()[0]);
         }
 
         [TestMethod]
-        public void validatePackageTest()
+        public void ValidatePackageTest()
         {
             Assert.AreEqual(false, packageType.validatePackage());
         }
-
-
-        /*[TestMethod]
-        public void PackageTypeConstructorTest()
-        {
-            expected = "Aggregated";
-            actual = packageType.PricingStrategy.ToString();
-            Assert.AreEqual(expected, actual);
-        }*/
     }
 }
