@@ -23,28 +23,28 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod]
         public void AddProductTypeTest()
         {
-            packageType.addProductType(new ProductType());
+            packageType.AddProductType(new ProductType());
             Assert.AreEqual(1, ProductTypes.Instance.Count);
         }
 
         [TestMethod]
         public void GetComponentsTest()
         {
-            packageType.addProductType(new ProductType());
-            Assert.AreEqual(ProductTypes.Instance.Get(0), packageType.getComponents()[0]);
+            packageType.AddProductType(new ProductType());
+            Assert.AreEqual(ProductTypes.Instance.Get(0), packageType.GetComponents()[0]);
         }
 
         [TestMethod]
         public void GetPricesTest()
         {
             Prices.Instance.Add(new Price());
-            Assert.AreEqual(Prices.Instance.Get(0), packageType.getPrices()[0]);
+            Assert.AreEqual(Prices.Instance.Get(0), packageType.GetPrices()[0]);
         }
 
         [TestMethod]
         public void ValidatePackageTest()
         {
-            Assert.AreEqual(false, packageType.validatePackage());
+            Assert.AreEqual(false, packageType.ValidatePackage());
         }
     }
 }

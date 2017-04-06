@@ -9,7 +9,7 @@ namespace Open.Archetypes.ProductClasses
 
         public List<ProductIdentifier> productIdentifiers { get; } = new List<ProductIdentifier>();
 
-        public void addProductReference(ProductIdentifier reference)
+        public void AddProductReference(ProductIdentifier reference)
         {
             productIdentifiers.Add(reference);
         }

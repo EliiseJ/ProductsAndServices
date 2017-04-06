@@ -19,10 +19,6 @@
             set { SetValue(ref price, value); }
         }
 
-        //todo: lk7, reservation:ReservationId [0..1]
-        //todo: lk7, reserve (reservationId:ReservationId)
-        //todo: lk7, cancelReservation()
-        //todo: lk7, getReservationStatus():ReservatonStatus
         public override ProductType Type => ProductTypes.Find(TypeId);
         public ProductFeatures Features => ProductFeatures.FindFeatures(UniqueId);
     }

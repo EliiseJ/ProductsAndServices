@@ -5,27 +5,27 @@ namespace Open.Archetypes.ProductClasses
 {
     public class PackageType : ProductType
     {
-        public void addProductType(ProductType product)
+        public void AddProductType(ProductType product)
         {
             ProductTypes.Instance.Add(product);
         }
 
-        public ProductType[] getComponents()
+        public ProductType[] GetComponents()
         {
             return ProductTypes.Instance.ToArray();
         }
 
-        public Price[] getPrices()
+        public Price[] GetPrices()
         {
             return Prices.Instance.ToArray();
         }
 
-        public void addProductSet(ProductSet set)
+        public void AddProductSet(ProductSet set)
         {
             
         }
 
-        public Boolean validatePackage()
+        public Boolean ValidatePackage()
         {
             return false;
         }

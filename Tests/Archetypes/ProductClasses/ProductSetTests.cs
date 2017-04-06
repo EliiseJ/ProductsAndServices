@@ -23,7 +23,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod]
         public void AddProductReferenceTest()
         {
-            set.addProductReference(new ProductIdentifier());
+            set.AddProductReference(new ProductIdentifier());
             Assert.AreEqual(1, set.productIdentifiers.Count);
         }
 

@@ -5,7 +5,6 @@ namespace Open.Archetypes.ProductClasses
 {
     public class ProductType : BaseType<ProductType>
     {
-
         private string name;
         private string description;
         public string Name

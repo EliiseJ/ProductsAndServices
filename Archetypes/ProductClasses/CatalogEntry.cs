@@ -31,15 +31,6 @@ namespace Open.Archetypes.ProductClasses
 
         public ProductType ProductType => ProductTypes.Find(ProductInstanceId);
 
-
-
-        //public ProductTypes GetProductTypes(string ID)
-        //{
-        //    return ProductTypes.Instances.GetProductTypesByID(ID);
-        //}
-        public override ProductType Type
-        {
-            get { return ProductTypes.Find(TypeId); }
-        }
+        public override ProductType Type => ProductTypes.Find(TypeId);
     }
 }
