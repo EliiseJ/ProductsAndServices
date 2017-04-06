@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Open.Archetypes.BaseClasses;
+using Open.Aids;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -29,6 +30,12 @@ namespace Open.Archetypes.ProductClasses
             var e = new ProductSet();
             e.SetRandomValues();
             return e;
+        }
+
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
+            name = GetRandom.String();
         }
     }
 }

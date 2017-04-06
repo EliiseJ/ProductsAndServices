@@ -1,4 +1,5 @@
-﻿using Open.Archetypes.BaseClasses;
+﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -9,6 +10,13 @@ namespace Open.Archetypes.ProductClasses
         internal static CatalogEntry Find(string catalogId)
         {
             return Instance.Find(x => x.UniqueId == catalogId);
+        }
+        public static CatalogEntries Random()
+        {
+            var r = new CatalogEntries();
+            var c = GetRandom.Count();
+            for (var i = 0; i < c; i++) r.Add(CatalogEntry.Random());
+            return r;
         }
     }
 }

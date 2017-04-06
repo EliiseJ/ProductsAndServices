@@ -1,4 +1,5 @@
-﻿using Open.Archetypes.BaseClasses;
+﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -44,5 +45,19 @@ namespace Open.Archetypes.ProductClasses
         public ProductType ProductType => ProductTypes.Find(ProductInstanceId);
 
         public override ProductType Type => ProductTypes.Find(TypeId);
+
+        public static CatalogEntry Random()
+        {
+            var e = new CatalogEntry();
+            e.SetRandomValues();
+            return e;
+        }
+
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
+            catalogId = GetRandom.String();
+            description = GetRandom.String();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Aids;
+
+namespace Open.Archetypes.ProductClasses
 {
     public class ProductInstance : Product<ProductType>
     {
@@ -21,5 +23,20 @@
 
         public override ProductType Type => ProductTypes.Find(TypeId);
         public ProductFeatures Features => ProductFeatures.FindFeatures(UniqueId);
+
+        public new static ProductInstance Random()
+        {
+            var e = new ProductInstance();
+            e.SetRandomValues();
+            return e;
+        }
+        
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
+            name = GetRandom.String();
+            serialNumber = GetRandom.String();
+            price = GetRandom.Decimal();
+        }
     }
 }

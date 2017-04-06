@@ -1,4 +1,5 @@
-﻿using Open.Archetypes.BaseClasses;
+﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -10,6 +11,18 @@ namespace Open.Archetypes.ProductClasses
         {
             get { return SetDefault(ref productId); }
             set { SetValue(ref productId, value); }
+        }
+        public new static ProductIdentifier Random()
+        {
+            var e = new ProductIdentifier();
+            e.SetRandomValues();
+            return e;
+        }
+
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
+            productId = GetRandom.String();
         }
     }
 }
