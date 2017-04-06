@@ -7,7 +7,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod] public void ConstructorTest()
         {
             var a = new Service().GetType().BaseType;
-            Assert.AreEqual(a, typeof(Service));
+            Assert.AreEqual(a, typeof(Product<ServiceType>));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Open.Aids;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -28,6 +29,18 @@ namespace Open.Archetypes.ProductClasses
         public Boolean ValidatePackage()
         {
             return false;
+        }
+
+        public new static PackageType Random()
+        {
+            var e = new PackageType();
+            e.SetRandomValues();
+            return e;
+        }
+
+        protected override void SetRandomValues()
+        {
+            base.SetRandomValues();
         }
     }
 }
