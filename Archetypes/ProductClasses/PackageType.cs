@@ -21,9 +21,9 @@ namespace Open.Archetypes.ProductClasses
             return Prices.Instance.ToArray();
         }
 
-        public void AddProductSet(ProductSet set)
+        public void AddProductSet(ProductSet productSet)
         {
-            
+            ProductSets.Instance.Add(productSet);
         }
 
         public Boolean ValidatePackage()

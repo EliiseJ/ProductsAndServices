@@ -90,6 +90,7 @@
     <Compile Include="ProductClasses\ProductInstance.cs" />
     <Compile Include="ProductClasses\Products.cs" />
     <Compile Include="ProductClasses\ProductSet.cs" />
+    <Compile Include="ProductClasses\ProductSets.cs" />
     <Compile Include="ProductClasses\ProductType.cs" />
     <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />

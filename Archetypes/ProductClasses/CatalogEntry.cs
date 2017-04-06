@@ -4,8 +4,20 @@ namespace Open.Archetypes.ProductClasses
 {
     public class CatalogEntry : BaseEntity<ProductType>
     {
-        private string CatalogId { get; set; }
-        private string Description { get; set; }
+        private string catalogId;
+        private string description;
+
+        public string CatalogId
+        {
+            get { return SetDefault(ref catalogId); }
+            set { SetValue(ref catalogId, value); }
+        }
+
+        public string Description
+        {
+            get { return SetDefault(ref description); }
+            set { SetValue(ref description, value); }
+        }
 
         public CatalogEntry GetCategories(string catalogId)
         {
