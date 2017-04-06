@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Archetypes.ProductClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Open.Tests.Archetypes.ProductClasses
 {
@@ -16,6 +11,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             return ProductTypes.Random();
         }
+
         [TestMethod]
         public void FindTest()
         {
@@ -27,6 +23,7 @@ namespace Open.Tests.Archetypes.ProductClasses
             ProductTypes.Instance.AddRange(ProductTypes.Random());
             Assert.AreEqual(t, ProductTypes.Find(s));
         }
+
         [TestMethod]
         public void InstanceTest()
         {

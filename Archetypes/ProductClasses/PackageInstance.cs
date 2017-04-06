@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Open.Archetypes.ProductClasses
+﻿namespace Open.Archetypes.ProductClasses
 {
     public class PackageInstance : ProductInstance
     {

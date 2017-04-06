@@ -1,4 +1,4 @@
-﻿namespace Archetypes.ProductClasses
+﻿namespace Open.Archetypes.ProductClasses
 {
     public enum PricingStrategy
     {

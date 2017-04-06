@@ -1,5 +1,4 @@
-﻿using System;
-using Open.Aids;
+﻿using Open.Aids;
 using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
@@ -41,14 +40,5 @@ namespace Open.Archetypes.ProductClasses
             name = GetRandom.String();
             description = GetRandom.String();
         }
-
-
-
-
-
-
-        //tegemata: getPrices(context: RuleContext):Price[]
-
-
     }
 }

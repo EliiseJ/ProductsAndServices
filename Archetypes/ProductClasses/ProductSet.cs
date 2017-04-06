@@ -14,7 +14,7 @@ namespace Open.Archetypes.ProductClasses
             productIdentifiers.Add(reference);
         }
 
-        public int count()
+        public int Count()
         {
             return productIdentifiers.Count;
         }

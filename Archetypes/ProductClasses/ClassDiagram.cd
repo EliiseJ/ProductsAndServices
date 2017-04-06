@@ -10,7 +10,7 @@
   <Class Name="Open.Archetypes.ProductClasses.PackageType" Collapsed="true">
     <Position X="6.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAgAAAAAABAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAgAAAAAABAAAAAAAAACAAAIAAAAAAA=</HashCode>
       <FileName>ProductClasses\PackageType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -49,7 +49,7 @@
       <FileName>ProductClasses\ProductType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Archetypes.ProductClasses.PricingStrategy">
+  <Enum Name="Open.Archetypes.ProductClasses.PricingStrategy">
     <Position X="9" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAKEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
