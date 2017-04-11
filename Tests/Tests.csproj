@@ -93,7 +93,10 @@
     <Compile Include="Archetypes\PartyClasses\PartyTests.cs" />
     <Compile Include="Archetypes\ProcessClasses\ProcessTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PackageInstanceTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductIdentifiersTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductIdentifierTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductInstanceTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductSetsTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductSetTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductsTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductTests.cs" />

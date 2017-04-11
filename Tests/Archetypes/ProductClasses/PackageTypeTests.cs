@@ -1,9 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Open.Aids;
-using Open.Archetypes.BaseClasses;
 using Open.Archetypes.ProductClasses;
-using Open.Archetypes.RoleClasses;
-
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]

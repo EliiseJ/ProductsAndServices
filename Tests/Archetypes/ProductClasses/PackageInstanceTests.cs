@@ -1,33 +1,41 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Archetypes.ProductClasses;
-
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]
-    public class PackageInstanceTests
+    public class PackageInstanceTests : CommonTests<PackageInstance>
     {
-        private PackageInstance instance;
+        protected override PackageInstance GetRandomObj()
+        {
+            return PackageInstance.Random();
+        }
 
         [TestInitialize]
-        public void InitializeTest()
+        public override void TestInitialize()
         {
-            instance = new PackageInstance();
+            base.TestInitialize();
+            ProductTypes.Instance.AddRange(ProductTypes.Random());
         }
 
         [TestCleanup]
-        public void TestCleanup()
+        public override void TestCleanup()
         {
-            instance = null;
+            base.TestCleanup();
+            ProductTypes.Instance.Clear();
         }
+
         [TestMethod]
         public void ConstructorTest()
         {
-            Assert.IsNotNull(instance);
+            var a = new PackageInstance().GetType().BaseType;
+            Assert.AreEqual(a, typeof(ProductInstance));
         }
+
         [TestMethod]
         public void GetContentsTest()
         {
-            Assert.IsNotNull(instance.Contents());
+            Assert.IsNotNull(Obj.Contents());
         }
     }
 }
+
