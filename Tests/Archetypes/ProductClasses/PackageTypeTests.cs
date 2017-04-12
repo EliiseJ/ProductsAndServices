@@ -3,7 +3,7 @@ using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]
-    public class PackageTypeTests: CommonTests<PackageType>
+    public class PackageTypeTests : CommonTests<PackageType>
     {
         protected override PackageType GetRandomObj()
         {
@@ -35,7 +35,7 @@ namespace Open.Tests.Archetypes.ProductClasses
             var p = ProductType.Random();
             var c = ProductTypes.Instance.Count;
             Obj.AddProductType(p);
-            Assert.AreEqual(c+1, ProductTypes.Instance.Count);
+            Assert.AreEqual(c + 1, ProductTypes.Instance.Count);
             Assert.AreEqual(p, ProductTypes.Instance.Find(x => x.IsSameContent(p)));
         }
 

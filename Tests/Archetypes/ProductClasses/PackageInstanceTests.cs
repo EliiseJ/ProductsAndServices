@@ -10,32 +10,32 @@ namespace Open.Tests.Archetypes.ProductClasses
             return PackageInstance.Random();
         }
 
-        [TestInitialize]
-        public override void TestInitialize()
-        {
-            base.TestInitialize();
-            ProductTypes.Instance.AddRange(ProductTypes.Random());
-        }
+        //[TestInitialize]
+        //public override void TestInitialize()
+        //{
+        //    base.TestInitialize();
+        //    ProductTypes.Instance.AddRange(ProductTypes.Random());
+        //}
 
-        [TestCleanup]
-        public override void TestCleanup()
-        {
-            base.TestCleanup();
-            ProductTypes.Instance.Clear();
-        }
+        //[TestCleanup]
+        //public override void TestCleanup()
+        //{
+        //    base.TestCleanup();
+        //    ProductTypes.Instance.Clear();
+        //}
 
-        [TestMethod]
-        public void ConstructorTest()
-        {
-            var a = new PackageInstance().GetType().BaseType;
-            Assert.AreEqual(a, typeof(ProductInstance));
-        }
+        //[TestMethod]
+        //public void ConstructorTest()
+        //{
+        //    var a = new PackageInstance().GetType().BaseType;
+        //    Assert.AreEqual(a, typeof(ProductInstance));
+        //}
 
-        [TestMethod]
-        public void GetContentsTest()
-        {
-            Assert.IsNotNull(Obj.Contents());
-        }
+        //[TestMethod]
+        //public void GetContentsTest()
+        //{
+        //    Assert.IsNotNull(Obj.Contents());
+        //}
     }
 }
 
