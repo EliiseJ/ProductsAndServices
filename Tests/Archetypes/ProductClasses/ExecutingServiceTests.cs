@@ -2,20 +2,24 @@
 using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
-    [TestClass] public class ExecutingServiceTests : ClassTests<ExecutingService>
+    [TestClass]
+    public class ExecutingServiceTests : ClassTests<ExecutingService>
     {
-        [TestMethod] public void ConstructorTest()
+        [TestMethod]
+        public void ConstructorTest()
         {
-            var a = new ExecutingService().GetType().BaseType;
-            Assert.AreEqual(a, typeof(Service));
+            var a = new ExecutingService().GetType();
+            Assert.AreEqual(a, typeof(IService));
         }
 
-        [TestMethod] public void CompleteTest()
+        [TestMethod]
+        public void CompleteTest()
         {
             Assert.AreEqual(false, new ExecutingService().Complete());
         }
 
-        [TestMethod] public void CancelTest()
+        [TestMethod]
+        public void CancelTest()
         {
             Assert.AreEqual(false, new ExecutingService().Cancel());
         }

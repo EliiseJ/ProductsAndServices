@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +74,7 @@
     <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
     <Compile Include="ProductClasses\IProduct.cs" />
+    <Compile Include="ProductClasses\IService.cs" />
     <Compile Include="ProductClasses\PackageInstance.cs" />
     <Compile Include="ProductClasses\PackageTypes.cs" />
     <Compile Include="ProductClasses\PackageType.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="ProductClasses\ProductTypes.cs" />
     <Compile Include="ProductClasses\ScheduledService.cs" />
     <Compile Include="ProductClasses\Service.cs" />
+    <Compile Include="ProductClasses\Services.cs" />
     <Compile Include="ProductClasses\ServiceType.cs" />
     <Compile Include="ProductClasses\ServiceTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

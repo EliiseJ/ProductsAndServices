@@ -6,7 +6,6 @@ namespace Open.Tests.Archetypes.ProductClasses
     [TestClass]
     public class PricingStrategyTests
     {
-
         [TestMethod]
         public void ConstructorTest()
         {

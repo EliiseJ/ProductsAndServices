@@ -1,7 +1,6 @@
 ﻿using Open.Aids;
 using Open.Archetypes.BaseClasses;
 
-
 namespace Open.Archetypes.ProductClasses
 {
     public class ProductTypes : Archetypes<ProductType>

@@ -8,8 +8,8 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod]
         public void ConstructorTest()
         {
-            var a = new CompletedService().GetType().BaseType;
-            Assert.AreEqual(a, typeof(Service));
+            var a = new CompletedService().GetType();
+            Assert.AreEqual(a, typeof(IService));
         }
     }
 }

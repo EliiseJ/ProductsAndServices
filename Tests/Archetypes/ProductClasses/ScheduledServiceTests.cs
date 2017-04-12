@@ -2,25 +2,30 @@
 using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
-    [TestClass] public class ScheduledServiceTests : ClassTests<ScheduledService>
+    [TestClass]
+    public class ScheduledServiceTests : ClassTests<ScheduledService>
     {
-        [TestMethod] public void ConstructorTest()
+        [TestMethod]
+        public void ConstructorTest()
         {
-            var a = new ScheduledService().GetType().BaseType;
-            Assert.AreEqual(a, typeof(Service));
+            var a = new ScheduledService().GetType();
+            Assert.AreEqual(a, typeof(IService));
         }
 
-        [TestMethod] public void RescheduleTest()
+        [TestMethod]
+        public void RescheduleTest()
         {
             Assert.AreEqual(false, new ScheduledService().Reschedule());
         }
 
-        [TestMethod] public void CancelTest()
+        [TestMethod]
+        public void CancelTest()
         {
             Assert.AreEqual(false, new ScheduledService().Cancel());
         }
 
-        [TestMethod] public void ExecuteTest()
+        [TestMethod]
+        public void ExecuteTest()
         {
             Assert.AreEqual(false, new ScheduledService().Execute());
         }

@@ -1,13 +1,14 @@
-﻿using System;
-using Open.Archetypes.BaseClasses;
+﻿using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
     public class ProductFeatures: Archetypes<ProductFeature>
     {
-        public static ProductFeatures FindFeatures(string uniqueId)
+        public static ProductFeatures Instance { get; } = new ProductFeatures();
+
+        public static ProductFeature Find(string productId)
         {
-            throw new NotImplementedException();
+            return Instance.Find(x => x.UniqueId == productId);
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Archetypes.BaseClasses;
+
+namespace Open.Archetypes.ProductClasses
 {
-    class CatalogCategory
+    public class CatalogCategory: Archetype
     {
     }
 }

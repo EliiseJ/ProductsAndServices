@@ -1,35 +1,26 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Open.Aids;
 using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]
     public class ProductInstanceTests : CommonTests<ProductInstance>
     {
-        //private ProductInstance i;
-
-        //[TestInitialize]
-        //public void InitializeTest()
-        //{
-        //    i = new ProductInstance();
-        //}
-
-        //[TestCleanup]
-        //public void TestCleanup()
-        //{
-        //    i = null;
-        //}
-
-        //[TestMethod]
-        //public void ConstructorTest()
-        //{
-        //    Assert.IsNotNull(i);
-        //}
+        [TestMethod]
+        public void ConstructorTest()
+        {
+            Assert.IsNotNull(Obj);
+        }
 
         [TestMethod]
         public void NameTest()
         {
             TestProperty(() => Obj.Name, x => Obj.Name = x);
+        }
+
+        [TestMethod]
+        public void SerialNumberTest()
+        {
+            TestProperty(() => Obj.SerialNumber, x => Obj.SerialNumber = x);
         }
 
         [TestMethod]
@@ -39,6 +30,15 @@ namespace Open.Tests.Archetypes.ProductClasses
             Obj.TypeId = t.UniqueId;
             ProductTypes.Instance.Add(t);
             Assert.AreEqual(t, Obj.Type);
+        }
+
+        [TestMethod]
+        public void FeatureTest()
+        {
+            var t = ProductFeature.Random();
+            Obj.UniqueId = t.UniqueId;
+            ProductFeatures.Instance.Add(t);
+            Assert.AreEqual(t, Obj.Feature);
         }
 
         [TestMethod]

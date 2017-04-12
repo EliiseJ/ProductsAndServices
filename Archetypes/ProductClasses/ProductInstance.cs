@@ -5,13 +5,14 @@ namespace Open.Archetypes.ProductClasses
     public class ProductInstance : Product<ProductType>
     {
         private string name;
-        //private string serialNumber;
+        private string serialNumber;
         private decimal price;
-        //public string SerialNumber
-        //{
-        //    get { return SetDefault(ref serialNumber); }
-        //    set { SetValue(ref serialNumber, value); }
-        //}
+
+        public string SerialNumber
+        {
+            get { return SetDefault(ref serialNumber); }
+            set { SetValue(ref serialNumber, value); }
+        }
         public string Name
         {
             get { return SetDefault(ref name); }
@@ -24,9 +25,9 @@ namespace Open.Archetypes.ProductClasses
         }
 
         public override ProductType Type => ProductTypes.Find(TypeId);
-        //public ProductFeatures Features => ProductFeatures.FindFeatures(UniqueId);
+        public ProductFeature Feature => ProductFeatures.Find(UniqueId);
 
-        public new static ProductInstance Random()
+        public static ProductInstance Random()
         {
             var e = new ProductInstance();
             e.SetRandomValues();
@@ -37,7 +38,7 @@ namespace Open.Archetypes.ProductClasses
         {
             base.SetRandomValues();
             name = GetRandom.String();
-            //serialNumber = GetRandom.String();
+            serialNumber = GetRandom.String();
             price = GetRandom.Decimal();
         }
     }

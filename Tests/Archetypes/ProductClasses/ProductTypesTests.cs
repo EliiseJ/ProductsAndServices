@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Archetypes.ProductClasses;
-
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]

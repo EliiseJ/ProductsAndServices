@@ -1,6 +1,8 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Archetypes.BaseClasses;
+
+namespace Open.Archetypes.ProductClasses
 {
-    public class CanceledService: Service
+    public class CanceledService: Archetypes<IService>
     {
     }
 }

@@ -1,7 +1,17 @@
-﻿namespace Open.Archetypes.ProductClasses
+﻿using Open.Archetypes.BaseClasses;
+
+namespace Open.Archetypes.ProductClasses
 {
-    public class Service: Product<ServiceType>
+    public abstract class Service<T>: BaseEntity<T>, IService
     {
-        public override ServiceType Type { get; }
+        private string packageId;
+
+        public string PackageId
+        {
+            get { return SetDefault(ref packageId); }
+            set { SetValue(ref packageId, value); }
+        }
+        
+        //public override ServiceType Type { get; }
     }
 }

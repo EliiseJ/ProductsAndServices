@@ -10,24 +10,28 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             return ProductIdentifier.Random();
         }
+
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
             ProductIdentifiers.Instance.AddRange(ProductIdentifiers.Random());
         }
+
         [TestCleanup]
         public override void TestCleanup()
         {
             base.TestCleanup();
             ProductIdentifiers.Instance.Clear();
         }
+
         [TestMethod]
         public void ConstructorTest()
         {
             var a = new ProductIdentifier().GetType().BaseType;
             Assert.AreEqual(a, typeof(UniqueEntity));
         }
+
         public void ProductIdTest()
         {
             Obj = new ProductIdentifier();

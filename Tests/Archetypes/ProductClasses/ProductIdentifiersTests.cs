@@ -10,11 +10,13 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             return ProductIdentifiers.Random();
         }
+
         [TestMethod]
         public void InstanceTest()
         {
             TestSingleton(() => ProductIdentifiers.Instance);
         }
+
         [TestMethod]
         public void FindTest()
         {

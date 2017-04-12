@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Open.Aids;
 using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
@@ -24,7 +24,7 @@ namespace Open.Archetypes.ProductClasses
 
         internal static IProduct Find(string productId)
         {
-            throw new NotImplementedException();
+            return Instance.Find(x => x.UniqueId == productId);
         }
     }
 }

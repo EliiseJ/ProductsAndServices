@@ -30,18 +30,11 @@ namespace Open.Archetypes.ProductClasses
         {
             ProductTypes.Instance.Find(x => x.Name == name);
         }
-        public new static ProductCatalog Random()
+        public static ProductCatalog Random()
         {
             var e = new ProductCatalog();
             e.SetRandomValues();
             return e;
         }
-
-        protected override void SetRandomValues()
-        {
-            base.SetRandomValues();
-        }
-
-
     }
 }

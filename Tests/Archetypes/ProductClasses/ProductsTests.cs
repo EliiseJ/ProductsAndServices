@@ -6,25 +6,13 @@ namespace Open.Tests.Archetypes.ProductClasses
     [TestClass]
     public class ProductsTests : ClassTests<IProduct>
     {
-        private Products products;
-
-        [TestInitialize]
-        public void InitializeTest()
-        {
-            products = new Products();
-        }
-
-        [TestCleanup]
-        public void TestCleanup()
-        {
-            products = null;
-        }
-
+        private Products p;
 
         [TestMethod]
         public void ConstructorTest()
         {
-            Assert.IsNotNull(products);
+            var a = new Products().GetType();
+            Assert.AreEqual(a, typeof(Products));
         }
 
         [TestMethod]

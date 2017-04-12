@@ -12,7 +12,7 @@ namespace Open.Archetypes.ProductClasses
             get { return SetDefault(ref productId); }
             set { SetValue(ref productId, value); }
         }
-        public new static ProductIdentifier Random()
+        public static ProductIdentifier Random()
         {
             var e = new ProductIdentifier();
             e.SetRandomValues();
