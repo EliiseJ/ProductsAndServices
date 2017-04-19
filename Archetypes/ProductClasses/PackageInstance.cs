@@ -2,7 +2,7 @@
 {
     public class PackageInstance : ProductInstance
     {
-        public Products Contents() => Products.GetContent(UniqueId);
+        public Products Contents => Products.GetContent(UniqueId);
 
         public new static PackageInstance Random()
         {
@@ -10,5 +10,6 @@
             e.SetRandomValues();
             return e;
         }
+
     }
 }

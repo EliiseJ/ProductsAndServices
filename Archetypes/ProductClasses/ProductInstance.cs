@@ -1,8 +1,9 @@
 ﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductInstance : Product<ProductType>
+    public class ProductInstance : BaseEntity<ProductType>
     {
         private string name;
         private string serialNumber;
@@ -23,10 +24,24 @@ namespace Open.Archetypes.ProductClasses
             get { return SetDefault(ref price); }
             set { SetValue(ref price, value); }
         }
+        private string packageId;
+
+        public string PackageId
+        {
+            get { return SetDefault(ref packageId); }
+            set { SetValue(ref packageId, value); }
+        }
 
         public override ProductType Type => ProductTypes.Find(TypeId);
         public ProductFeature Feature => ProductFeatures.Find(UniqueId);
 
+        public static ProductInstance GetRandomDerived()
+        {
+            var i = GetRandom.Int32() % 3;
+            if (i == 1) return ServiceInstance.Random();
+            if (i == 2) return PackageInstance.Random();
+            return ProductInstance.Random();
+        }
         public static ProductInstance Random()
         {
             var e = new ProductInstance();
@@ -40,6 +55,18 @@ namespace Open.Archetypes.ProductClasses
             name = GetRandom.String();
             serialNumber = GetRandom.String();
             price = GetRandom.Decimal();
+        }
+
+        public ProductType ProductType
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
     }
 }

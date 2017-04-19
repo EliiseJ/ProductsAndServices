@@ -2,16 +2,17 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductCatalog: Archetype
+    public class ProductCatalog : Archetype
     {
         public void Add(ProductType productType)
         {
             ProductTypes.Instance.Add(productType);
         }
 
-        public void Remove(ProductIdentifier productId)
+        public void Remove(string productId)
         {
-            ProductIdentifiers.Instance.Remove(productId);
+            var p = Products.Instance.Find(x => x.UniqueId == productId);
+            Products.Instance.Remove(p);
         }
 
         public ProductType FindByCatalogId(string catalogId)

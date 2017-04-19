@@ -2,7 +2,7 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class CanceledService: Archetypes<IService>
+    public class CanceledService : ServiceInstance
     {
     }
 }

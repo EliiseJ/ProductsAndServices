@@ -13,9 +13,9 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref name, value); }
         }
 
-        public List<ProductIdentifier> ProductIdentifiers { get; } = new List<ProductIdentifier>();
+        public List<string> ProductIdentifiers { get; } = new List<string>();
 
-        public void AddProductReference(ProductIdentifier reference)
+        public void AddProductReference(string reference)
         {
             ProductIdentifiers.Add(reference);
         }

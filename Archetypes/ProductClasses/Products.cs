@@ -1,9 +1,19 @@
-﻿using Open.Aids;
+﻿using System;
+using Open.Aids;
 using Open.Archetypes.BaseClasses;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class Products : Archetypes<IProduct>
+    [KnownType(typeof(ProductInstance))]
+    [XmlInclude(typeof(ProductInstance))]
+    [KnownType(typeof(ServiceInstance))]
+    [XmlInclude(typeof(ServiceInstance))]
+    [KnownType(typeof(PackageInstance))]
+    [XmlInclude(typeof(PackageInstance))]
+
+    public class Products : Archetypes<ProductInstance>
     {
         public static Products Instance { get; } = new Products();
         public static Products GetInstances(string uniqueId)
@@ -22,7 +32,15 @@ namespace Open.Archetypes.ProductClasses
             return r;
         }
 
-        internal static IProduct Find(string productId)
+        internal static Products Random()
+        {
+            var p = new Products();
+            for (var i = 0; i < GetRandom.Count(); i++)
+                p.Add(ProductInstance.GetRandomDerived());
+            return p;
+        }
+
+        internal static ProductInstance Find(string productId)
         {
             return Instance.Find(x => x.UniqueId == productId);
         }

@@ -1,60 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Open.Archetypes.ProductClasses.ArbitaryPrice" Collapsed="true">
-    <Position X="9" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\ArbitaryPrice.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.PackageType" Collapsed="true">
-    <Position X="6.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAgAAAAAABAAAAAAAAACAAAIAAAAAAA=</HashCode>
-      <FileName>ProductClasses\PackageType.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.PossiblePrice" Collapsed="true">
-    <Position X="9" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\PossiblePrice.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.Price" Collapsed="true">
-    <Position X="9" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAABAAAAAgAAAAIAAAAACAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\Price.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.ProductIdentifier">
-    <Position X="4.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\ProductIdentifier.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Open.Archetypes.ProductClasses.ProductInstance">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAQEAAAAAAAABAAQAAAEEAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AACBAAAYAQEAAAAAAAAAAAQAAAEEBAAAAQAECAAAgAA=</HashCode>
       <FileName>ProductClasses\ProductInstance.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProductType" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.ProductType">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAgAAAAIAAAAAQAAAAEBAAAQQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAYAAAgAAAAIAAAAAQAAAAEBAAAQQAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ProductType.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProductType1" />
+    </ShowAsAssociation>
   </Class>
-  <Enum Name="Open.Archetypes.ProductClasses.PricingStrategy">
-    <Position X="9" Y="3" Width="1.5" />
+  <Class Name="Open.Archetypes.ProductClasses.ProductCatalog">
+    <Position X="0.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAKEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>ProductClasses\PricingStrategy.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAIABAAAAAAAAAASAAA=</HashCode>
+      <FileName>ProductClasses\ProductCatalog.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
+  <Class Name="Open.Archetypes.ProductClasses.CatalogEntry">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACBAaAAAgAAAAIAAAAAACAQAABAAAAQAAAAAAAAg=</HashCode>
+      <FileName>ProductClasses\CatalogEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProductType1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Open.Archetypes.ProductClasses.PackageInstance">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAA=</HashCode>
+      <FileName>ProductClasses\PackageInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Archetypes.ProductClasses.ServiceInstance">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductClasses\ServiceInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

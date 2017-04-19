@@ -3,7 +3,7 @@ using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductSets: Archetypes<ProductSet>
+    public class ProductSets : Archetypes<ProductSet>
     {
         public static ProductSets Instance { get; } = new ProductSets();
 

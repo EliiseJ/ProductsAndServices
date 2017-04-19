@@ -2,7 +2,7 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ProductFeatures: Archetypes<ProductFeature>
+    public class ProductFeatures : Archetypes<ProductFeature>
     {
         public static ProductFeatures Instance { get; } = new ProductFeatures();
 

@@ -3,7 +3,7 @@ using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class Price: UniqueEntity
+    public class Price : UniqueEntity
     {
         private string productId;
         private string description;
@@ -12,7 +12,7 @@ namespace Open.Archetypes.ProductClasses
         public string ProductId
         {
             get { return SetDefault(ref productId); }
-            set { SetValue(ref productId, value);}
+            set { SetValue(ref productId, value); }
         }
         public string Description
         {

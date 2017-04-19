@@ -21,25 +21,11 @@
       <FileName>ProductClasses\ExecutingService.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Open.Archetypes.ProductClasses.Product" Collapsed="true">
-    <Position X="3.75" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\Product.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Open.Archetypes.ProductClasses.ScheduledService">
     <Position X="4.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAQAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ScheduledService.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Open.Archetypes.ProductClasses.Service" Collapsed="true">
-    <Position X="3.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductClasses\Service.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

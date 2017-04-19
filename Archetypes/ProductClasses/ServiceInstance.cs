@@ -2,7 +2,7 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class ArbitaryPrice: Archetype
+    public class ServiceInstance : ProductInstance
     {
     }
 }

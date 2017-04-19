@@ -59,5 +59,17 @@ namespace Open.Archetypes.ProductClasses
             catalogId = GetRandom.String();
             description = GetRandom.String();
         }
+
+        public ProductType ProductType1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

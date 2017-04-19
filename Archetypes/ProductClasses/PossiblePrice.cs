@@ -2,7 +2,7 @@
 
 namespace Open.Archetypes.ProductClasses
 {
-    public class PossiblePrice: Archetype
+    public class PossiblePrice : Archetype
     {
     }
 }
