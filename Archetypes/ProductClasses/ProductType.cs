@@ -21,18 +21,6 @@ namespace Open.Archetypes.ProductClasses
 
         public override ProductType Type => ProductTypes.Find(TypeId);
 
-        public ProductType ProductType1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
         public Products Instances()
         {
             return Products.GetInstances(UniqueId);

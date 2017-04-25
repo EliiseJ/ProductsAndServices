@@ -10,18 +10,6 @@ namespace Open.Tests.Archetypes.ProductClasses
             return PackageType.Random();
         }
 
-        [TestInitialize]
-        public override void TestInitialize()
-        {
-            base.TestInitialize();
-            ProductTypes.Instance.AddRange(ProductTypes.Random());
-        }
-        [TestCleanup]
-        public override void TestCleanup()
-        {
-            base.TestCleanup();
-            ProductTypes.Instance.Clear();
-        }
         [TestMethod]
         public void ConstructorTest()
         {

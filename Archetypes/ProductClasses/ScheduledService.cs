@@ -1,6 +1,4 @@
-﻿using Open.Archetypes.BaseClasses;
-
-namespace Open.Archetypes.ProductClasses
+﻿namespace Open.Archetypes.ProductClasses
 {
     public class ScheduledService : ServiceInstance
     {

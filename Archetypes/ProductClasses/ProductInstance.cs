@@ -56,17 +56,5 @@ namespace Open.Archetypes.ProductClasses
             serialNumber = GetRandom.String();
             price = GetRandom.Decimal();
         }
-
-        public ProductType ProductType
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
     }
 }

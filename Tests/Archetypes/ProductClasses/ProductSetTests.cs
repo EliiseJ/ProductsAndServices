@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Open.Aids;
 using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
@@ -20,7 +20,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         [TestMethod]
         public void AddProductReferenceTest()
         {
-            Obj.AddProductReference(new ProductIdentifier());
+            Obj.AddProductReference(GetRandom.String());
             Assert.AreEqual(1, Obj.ProductIdentifiers.Count);
         }
 

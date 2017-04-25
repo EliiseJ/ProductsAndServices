@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Open.Aids;
 
 namespace Open.Archetypes.ProductClasses
 {
