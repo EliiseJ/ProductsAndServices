@@ -11,17 +11,23 @@ namespace Open.Tests.Archetypes.ProductClasses
         }
         
         [TestMethod]
-        public void ProductNameTest()
+        public void NameTest()
         {
             Obj = new ProductType();
             TestProperty(() => Obj.Name, x => Obj.Name = x);
         }
 
         [TestMethod]
-        public void ProductDescriptionTest()
+        public void DescriptionTest()
         {
             Obj = new ProductType();
             TestProperty(() => Obj.Description, x => Obj.Description = x);
+        }
+
+        [TestMethod]
+        public void InstancesTest()
+        {
+            TestSingleton(() => Products.Instance);
         }
 
         [TestMethod]

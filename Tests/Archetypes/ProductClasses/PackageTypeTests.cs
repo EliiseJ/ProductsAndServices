@@ -28,6 +28,16 @@ namespace Open.Tests.Archetypes.ProductClasses
         }
 
         [TestMethod]
+        public void AddProductSetTest()
+        {
+            var p = ProductSet.Random();
+            var c = ProductSets.Instance.Count;
+            Obj.AddProductSet(p);
+            Assert.AreEqual(c + 1, ProductSets.Instance.Count);
+            Assert.AreEqual(p, ProductSets.Instance.Find(x => x.IsSameContent(p)));
+        }
+
+        [TestMethod]
         public void GetComponentsTest()
         {
             Obj.AddProductType(new ProductType());

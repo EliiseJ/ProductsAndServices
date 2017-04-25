@@ -46,9 +46,22 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             TestProperty(() => Obj.Price, x => Obj.Price = x);
         }
+        [TestMethod]
+        public void PackageIdTest()
+        {
+            TestProperty(() => Obj.PackageId, x => Obj.PackageId = x);
+        }
         protected override ProductInstance GetRandomObj()
         {
             return ProductInstance.Random();
+        }
+        [TestMethod]
+        public void GetRandomDerivedTest()
+        {
+            var a = ProductInstance.GetRandomDerived();
+            var b = ProductInstance.GetRandomDerived();
+            Assert.AreNotEqual(a.ToString(), b.ToString());
+            Assert.AreNotEqual(string.Empty, a.ToString());
         }
     }
 }
