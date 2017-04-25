@@ -138,7 +138,6 @@
     <Compile Include="IsDataTested.cs" />
     <Compile Include="IsLogicTested.cs" />
     <Compile Include="IsTestedBase.cs" />
-    <Compile Include="Logic\DummyTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PackageTypeTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PricingStrategyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,6 +165,9 @@
   <ItemGroup>
     <None Include="Common.cd" />
     <None Include="CommonTests.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
