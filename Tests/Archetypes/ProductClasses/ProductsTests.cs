@@ -5,7 +5,6 @@ namespace Open.Tests.Archetypes.ProductClasses
     [TestClass]
     public class ProductsTests : ClassTests<Products>
     {
-        private Products p;
 
         [TestMethod]
         public void ConstructorTest()
@@ -20,7 +19,7 @@ namespace Open.Tests.Archetypes.ProductClasses
             TestSingleton(() => Products.Instance);
         }
 
-        protected override Products GetRandomObj()
+        protected Products GetRandomObj()
         {
             return Products.Random();
         }
