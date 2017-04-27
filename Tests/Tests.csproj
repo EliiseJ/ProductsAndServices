@@ -96,6 +96,12 @@
     <Compile Include="Archetypes\ProductClasses\CatalogEntriesTests.cs" />
     <Compile Include="Archetypes\ProductClasses\CatalogEntryTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PackageInstanceTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PackageTypesTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PricesTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\PriceTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductCatalogTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductFeaturesTests.cs" />
+    <Compile Include="Archetypes\ProductClasses\ProductFeatureTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductInstanceTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductSetsTests.cs" />
     <Compile Include="Archetypes\ProductClasses\ProductSetTests.cs" />
@@ -142,6 +148,8 @@
     <Compile Include="IsTestedBase.cs" />
     <Compile Include="Archetypes\ProductClasses\PackageTypeTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PricingStrategyTests.cs" />
+    <Compile Include="Logic\ProductClasses\ProductEditModelTests.cs" />
+    <Compile Include="Logic\ProductClasses\ProductViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="CommonTests.cs" />
@@ -168,9 +176,7 @@
     <None Include="Common.cd" />
     <None Include="CommonTests.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

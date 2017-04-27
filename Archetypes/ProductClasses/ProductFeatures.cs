@@ -1,4 +1,5 @@
-﻿using Open.Archetypes.BaseClasses;
+﻿using Open.Aids;
+using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -9,6 +10,14 @@ namespace Open.Archetypes.ProductClasses
         public static ProductFeature Find(string productId)
         {
             return Instance.Find(x => x.UniqueId == productId);
+        }
+
+        public static ProductFeatures Random()
+        {
+            var r = new ProductFeatures();
+            var c = GetRandom.Count();
+            for (var i = 0; i < c; i++) r.Add(ProductFeature.Random());
+            return r;
         }
     }
 }

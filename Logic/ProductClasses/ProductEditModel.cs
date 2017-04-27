@@ -7,6 +7,7 @@ namespace Open.Logic.ProductClasses
     {
         public string Name { get; set; }
         public string Genre { get; set; }
+        public string Id { get; set; }
 
         public ProductEditModel() { }
         public ProductEditModel(ProductInstance product)

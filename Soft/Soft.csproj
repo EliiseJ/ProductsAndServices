@@ -209,6 +209,18 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj">
+      <Project>{b4620d17-caa0-4f62-ad02-812b7254f6ae}</Project>
+      <Name>Aids</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Archetypes\Archetypes.csproj">
+      <Project>{EE23228F-DC50-4C25-BBC3-5C11D8E29C32}</Project>
+      <Name>Archetypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{b5794ad7-2074-41ca-b5ca-2ca672e44776}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{1E1E7079-CB4F-480C-B881-1066404707CE}</Project>
       <Name>Logic</Name>
