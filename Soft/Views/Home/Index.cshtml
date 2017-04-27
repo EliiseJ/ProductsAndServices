@@ -1,17 +1,14 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <div class="jumbotron">
     <h1>Library</h1>
-    <p><a  class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <h2>List of books</h2>
-        <p>Tekst1</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">List &raquo;</a></p>
+        @Html.ActionLink("View books", "Index", "Product")
     </div>
     <div class="col-md-4">
         <h2>Add a new book</h2>

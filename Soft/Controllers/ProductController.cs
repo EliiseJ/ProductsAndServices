@@ -1,5 +1,7 @@
-﻿using Open.Logic.ProductClasses;
+﻿using System.Collections.Generic;
+using Open.Logic.ProductClasses;
 using System.Web.Mvc;
+using Open.Archetypes.ProductClasses;
 
 namespace Soft.Controllers
 {
@@ -7,7 +9,14 @@ namespace Soft.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var product = ProductInstance.Random();
+            Products.Instance.Add(product);
+            var model = new List<ProductViewModel>();
+            foreach (var p in Products.Instance)
+            {
+                model.Add(new ProductViewModel(p));
+            }
+            return View(model);
         }
 
         public ActionResult AddBook()
