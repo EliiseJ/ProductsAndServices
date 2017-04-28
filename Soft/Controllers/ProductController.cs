@@ -7,10 +7,11 @@ namespace Soft.Controllers
 {
     public class ProductController : Controller
     {
+        private static bool isCreated;
         public ActionResult Index()
         {
-            var product = ProductInstance.Random();
-            Products.Instance.Add(product);
+            if (!isCreated) Products.Instance.AddRange(Products.Random(10, 30));
+            isCreated = true;
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {
@@ -18,8 +19,7 @@ namespace Soft.Controllers
             }
             return View(model);
         }
-
-        public ActionResult AddBook()
+            public ActionResult AddBook()
         {
             var b = new ProductEditModel();
             return View("AddBook", b);

@@ -32,15 +32,15 @@ namespace Open.Archetypes.ProductClasses
             return r;
         }
 
-        internal static Products Random()
+        public static Products Random(byte min = 3, byte max = 10)
         {
             var p = new Products();
-            for (var i = 0; i < GetRandom.Count(); i++)
+            var c = GetRandom.Count(min, max);
+            for (var i = 0; i < c ; i++)
                 p.Add(ProductInstance.GetRandomDerived());
             return p;
         }
-
-        internal static ProductInstance Find(string productId)
+        public static ProductInstance Find(string productId)
         {
             return Instance.Find(x => x.UniqueId == productId);
         }
