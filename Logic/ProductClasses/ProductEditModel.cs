@@ -12,12 +12,16 @@ namespace Open.Logic.ProductClasses
         public ProductEditModel() { }
         public ProductEditModel(ProductInstance product)
         {
-
+            Id = product.UniqueId;
+            Name = product.Name;
+            Genre = (product.Type == null) ? product.TypeId : product.Type.Name;
         }
 
         public void Update(ProductInstance product)
         {
-            
+            Id = product.UniqueId;
+            Name = product.Name;
+            Genre = (product.Type == null) ? product.TypeId : product.Type.Name;
         }
     }
 }

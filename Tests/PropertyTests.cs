@@ -33,6 +33,13 @@ namespace Open.Tests
             set(s);
             Assert.AreEqual(s, get());
         }
+        public void TestProperty(Func<string> get, Action<string> set, string initialValue)
+        {
+            Assert.AreEqual(initialValue, get());
+            var s = Open.Aids.GetRandom.String();
+            set(s);
+            Assert.AreEqual(s, get());
+        }
         public void TestProperty(Func<bool> get, Action<bool> set, bool initialValue)
         {
             Assert.AreEqual(initialValue, get());
