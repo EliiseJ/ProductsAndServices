@@ -24,5 +24,15 @@ namespace Soft.Controllers
             var b = new ProductEditModel();
             return View("AddBook", b);
         }
+        [HttpPost]
+
+        public ActionResult AddBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
+        {
+            if (!ModelState.IsValid) return View("AddBook", e);
+            var adr = new ProductInstance { Product = new Products() };
+            Products.Instance.Add(adr);
+            e.Update(adr);
+            return RedirectToAction("Index");
+        }
     }
 }

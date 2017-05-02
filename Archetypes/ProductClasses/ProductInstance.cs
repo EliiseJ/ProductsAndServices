@@ -8,6 +8,13 @@ namespace Open.Archetypes.ProductClasses
         private string name;
         private string serialNumber;
         private decimal price;
+        private Products product;
+        public Products Product
+        {
+            get { return SetDefault(ref product); }
+            set { SetValue(ref product, value); }
+        }
+
 
         public string SerialNumber
         {

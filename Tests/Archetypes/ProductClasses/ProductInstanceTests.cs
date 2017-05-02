@@ -18,6 +18,12 @@ namespace Open.Tests.Archetypes.ProductClasses
         }
 
         [TestMethod]
+        public void ProductTest()
+        {
+            TestProperty(() => Obj.Product, x => Obj.Product = x);
+        }
+
+        [TestMethod]
         public void SerialNumberTest()
         {
             TestProperty(() => Obj.SerialNumber, x => Obj.SerialNumber = x);

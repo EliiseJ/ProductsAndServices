@@ -17,11 +17,11 @@ namespace Open.Logic.ProductClasses
             Genre = (product.Type == null) ? product.TypeId : product.Type.Name;
         }
 
-        public void Update(ProductInstance product)
+        public void Update(ProductInstance p)
         {
-            Id = product.UniqueId;
-            Name = product.Name;
-            Genre = (product.Type == null) ? product.TypeId : product.Type.Name;
+            var a = p.Product as Products;
+            p.Name = Name;
+            p.TypeId = Genre;
         }
     }
 }
