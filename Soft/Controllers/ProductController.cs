@@ -30,9 +30,9 @@ namespace Soft.Controllers
         public ActionResult AddBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
         {
             if (!ModelState.IsValid) return View("AddBook", e);
-            var adr = new ProductInstance { Product = new Products() };
-            Products.Instance.Add(adr);
-            e.Update(adr);
+            var book = new ProductInstance { Product = new Products() };
+            Products.Instance.Add(book);
+            e.Update(book);
             return RedirectToAction("Index");
         }
 
@@ -46,6 +46,9 @@ namespace Soft.Controllers
         public ActionResult EditProduct([Bind(Include = "Id,Name,Genre")] ProductEditModel p)
         {
             if (!ModelState.IsValid) return View("EditProduct", p);
+            var book = Products.Instance.Find(x => x.IsThisUniqueId(p.Id));
+            if (book == null) return HttpNotFound();
+            p.Update(book);
             return RedirectToAction("Index");
         }
     }
