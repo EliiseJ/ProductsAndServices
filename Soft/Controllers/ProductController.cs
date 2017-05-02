@@ -11,7 +11,7 @@ namespace Soft.Controllers
         private static bool isCreated;
         public ActionResult Index()
         {
-            if (!isCreated) Products.Instance.AddRange(Products.Random(10, 30));
+            if (!isCreated) Products.Instance.AddRange(Products.Random(5, 10));
             isCreated = true;
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
@@ -39,6 +39,9 @@ namespace Soft.Controllers
         public ActionResult Edit(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
+            if (book == null) return HttpNotFound();
+            if (book.Product is Products) return View("EditProduct", new ProductEditModel(book));
             return View("Index");
         }
 
