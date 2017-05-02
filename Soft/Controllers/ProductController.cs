@@ -2,6 +2,7 @@
 using Open.Logic.ProductClasses;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
+using System.Net;
 
 namespace Soft.Controllers
 {
@@ -32,6 +33,19 @@ namespace Soft.Controllers
             var adr = new ProductInstance { Product = new Products() };
             Products.Instance.Add(adr);
             e.Update(adr);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(string id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ActionResult EditProduct([Bind(Include = "Id,Name,Genre")] ProductEditModel p)
+        {
+            if (!ModelState.IsValid) return View("EditProduct", p);
             return RedirectToAction("Index");
         }
     }
