@@ -3,6 +3,7 @@ using Open.Logic.ProductClasses;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 using System.Net;
+using Open.Aids;
 
 namespace Soft.Controllers
 {
@@ -31,6 +32,7 @@ namespace Soft.Controllers
         {
             if (!ModelState.IsValid) return View("AddBook", e);
             var book = new ProductInstance { Product = new Products() };
+            book.UniqueId = GetRandom.String();
             Products.Instance.Add(book);
             e.Update(book);
             return RedirectToAction("Index");

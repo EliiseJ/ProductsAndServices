@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace Open.Aids {
     public class GetRandom {
-        private static readonly Random rnd = new Random(123456);
+        private static readonly Random rnd = new Random();
         public static bool Bool() { return rnd.Next() % 2 == 0; }
         public static char Char(char min = char.MinValue, char max = char.MaxValue) {
             var i = Int32(min, max);
@@ -70,7 +70,15 @@ namespace Open.Aids {
         public static string String(int min = 10, int max = 20) {
             var b = new StringBuilder();
             var size = Int32(min, max);
-            for (var i = 0; i < size; i++) b.Append(Char('A', 'z'));
+            for (var i = 0; i < size; i++)
+            {
+                char c = Char('A', 'z');
+                while (!System.Char.IsLetter(c))
+                {
+                    c = Char('A', 'z');
+                }
+                b.Append(c);
+            }
             return b.ToString();
         }
         public static IEnumerable<string> Strings() {
