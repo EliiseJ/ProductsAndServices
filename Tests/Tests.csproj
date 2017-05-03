@@ -148,6 +148,7 @@
     <Compile Include="IsTestedBase.cs" />
     <Compile Include="Archetypes\ProductClasses\PackageTypeTests.cs" />
     <Compile Include="Archetypes\ProductClasses\PricingStrategyTests.cs" />
+    <Compile Include="Logic\ProductClasses\ProductDetailsModelTests.cs" />
     <Compile Include="Logic\ProductClasses\ProductEditModelTests.cs" />
     <Compile Include="Logic\ProductClasses\ProductViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
