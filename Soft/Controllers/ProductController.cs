@@ -27,7 +27,6 @@ namespace Soft.Controllers
             return View("AddBook", b);
         }
         [HttpPost]
-
         public ActionResult AddBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
         {
             if (!ModelState.IsValid) return View("AddBook", e);
@@ -55,6 +54,24 @@ namespace Soft.Controllers
             if (book == null) return HttpNotFound();
             p.Update(book);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(string id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
+            if (book == null) return HttpNotFound();
+            if (book.Product is Products) Products.Instance.Remove(book);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(string id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
+            if (book == null) return HttpNotFound();
+            if (book.Product is Products) return View("ProductDetails", new ProductDetailsModel(book));
+            return View("Index");
         }
     }
 }
