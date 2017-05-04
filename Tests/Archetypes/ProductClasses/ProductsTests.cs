@@ -1,12 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Archetypes.ProductClasses;
 namespace Open.Tests.Archetypes.ProductClasses
 {
     [TestClass]
-    public class ProductsTests : ClassTests<Products>
+    public class ProductsTests : CommonTests<Products>
     {
-
         [TestMethod]
         public void ConstructorTest()
         {
@@ -19,6 +19,7 @@ namespace Open.Tests.Archetypes.ProductClasses
         {
             TestSingleton(() => Products.Instance);
         }
+
         [TestMethod]
         public void GetInstancesTest()
         {
@@ -30,6 +31,7 @@ namespace Open.Tests.Archetypes.ProductClasses
             Products.Instance.AddRange(Products.Random());
             Assert.AreEqual(l.Count, Products.GetInstances(s).Count);
         }
+
         [TestMethod]
         public void GetContentTest()
         {
@@ -41,9 +43,22 @@ namespace Open.Tests.Archetypes.ProductClasses
             Products.Instance.AddRange(Products.Random());
             Assert.AreEqual(l.Count, Products.GetContent(s).Count);
         }
-        protected Products GetRandomObj()
+
+        protected override Products GetRandomObj()
         {
             return Products.Random();
+        }
+
+        [TestMethod]
+        public void FindTest()
+        {
+            var s = GetRandom.String();
+            Assert.IsNull(Products.Find(s));
+            var t = ProductInstance.Random();
+            t.UniqueId = s;
+            Products.Instance.Add(t);
+            Products.Instance.AddRange(Products.Random());
+            Assert.AreEqual(t, Products.Find(s));
         }
     }
 }
