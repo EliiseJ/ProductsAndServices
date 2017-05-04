@@ -1,7 +1,7 @@
 ﻿@model Open.Logic.ProductClasses.ProductEditModel
 
 @{
-    ViewBag.Title = "EditProduct";
+    ViewBag.Title = "Edit Product";
 }
 
 <h2>Edit book</h2>
@@ -10,7 +10,6 @@
 @using (Html.BeginForm("EditProduct", "Product", FormMethod.Post))
 {
     <div class="form-horizontal">
-        <h4>Edit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
