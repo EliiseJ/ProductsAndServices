@@ -1,5 +1,4 @@
-﻿using System;
-using Open.Aids;
+﻿using Open.Aids;
 using Open.Archetypes.BaseClasses;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
@@ -16,6 +15,7 @@ namespace Open.Archetypes.ProductClasses
     public class Products : Archetypes<ProductInstance>
     {
         public static Products Instance { get; } = new Products();
+
         public static Products GetInstances(string uniqueId)
         {
             var r = new Products();
@@ -40,6 +40,7 @@ namespace Open.Archetypes.ProductClasses
                 p.Add(ProductInstance.GetRandomDerived());
             return p;
         }
+
         public static ProductInstance Find(string productId)
         {
             return Instance.Find(x => x.UniqueId == productId);
