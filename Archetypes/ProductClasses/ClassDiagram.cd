@@ -1,35 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Open.Archetypes.ProductClasses.ProductInstance">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AACDAAAIAwEAAAAAAAAAAAQAAAEEBAAAAQAECAAAgAA=</HashCode>
       <FileName>ProductClasses\ProductInstance.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.ProductType">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAgAAAAIAAAAAQAAAAEBAAAQQAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ProductType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.PackageInstance">
-    <Position X="5" Y="0.75" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAA=</HashCode>
       <FileName>ProductClasses\PackageInstance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.ServiceInstance" Collapsed="true">
-    <Position X="5" Y="3.25" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\ServiceInstance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Open.Archetypes.ProductClasses.Products">
-    <Position X="7.25" Y="1.5" Width="1.5" />
+    <Position X="9.25" Y="1.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAIBAAAQCAAAAAAAAA=</HashCode>
       <FileName>ProductClasses\Products.cs</FileName>
@@ -38,8 +41,8 @@
       <Property Name="Instance" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Open.Archetypes.ProductClasses.PackageType" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Open.Archetypes.ProductClasses.PackageType">
+    <Position X="0.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAEAAAAAAgAAIABAAAAAAAAAAACAI=</HashCode>
       <FileName>ProductClasses\PackageType.cs</FileName>
