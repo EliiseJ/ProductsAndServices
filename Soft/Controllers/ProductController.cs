@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using Open.Logic.ProductClasses;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 using System.Net;
 using Open.Aids;
-using System.Linq;
+using Open.Data;
+using System.Collections;
 
 namespace Soft.Controllers
 {
@@ -20,8 +20,8 @@ namespace Soft.Controllers
                 Business.Save(Products.Instance);
                 isCreated = true;
             }
-            
-            Products.Instance.AddRange(Business.Load(instance: ));
+
+            Products.Instance.AddRange(Business.Load());
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {
@@ -88,34 +88,6 @@ namespace Soft.Controllers
             //TODO
             return RedirectToAction("Index");
         }
-
-    }
-
-    public class Business
-    {
-        public static void Save(Products instance)
-        {
-            var db = new OpenProduct();
-            db.Products.Add(instance);
-            db.SaveChanges();
-        }
-
-        public static List<Products> Load(Products instance)
-        {
-            var db = new OpenProduct();
-            return db.Products.ToList();
-        }
-    }
-
-    public class OpenProduct: DbContext
-    {
-        protected override void OnModelCreating(DbModelBuilder mb)
-        {
-            mb.Entity<Products>().ToTable("Products");
-            base.OnModelCreating(mb);
-        }
-
-        public DbSet<Products> Products { get; set; }
 
     }
 }
