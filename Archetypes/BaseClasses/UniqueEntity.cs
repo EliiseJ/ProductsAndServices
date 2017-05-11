@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Open.Aids;
 namespace Open.Archetypes.BaseClasses {
     public abstract class UniqueEntity : AttributedEntity {
@@ -21,7 +22,7 @@ namespace Open.Archetypes.BaseClasses {
         }
         protected override void SetRandomValues() {
             base.SetRandomValues();
-            uniqueId = GetRandom.String();
+            uniqueId = Guid.NewGuid().ToString();
         }
     }
 }

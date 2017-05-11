@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using Open.Logic.ProductClasses;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 using System.Net;
 using Open.Aids;
+using System.Linq;
 
 namespace Soft.Controllers
 {
@@ -12,8 +14,14 @@ namespace Soft.Controllers
         private static bool isCreated;
         public ActionResult Index()
         {
-            if (!isCreated) Products.Instance.AddRange(Products.Random(5, 10));
-            isCreated = true;
+            if (!isCreated)
+            {
+                Products.Instance.AddRange(Products.Random(5));
+                Business.Save(Products.Instance);
+                isCreated = true;
+            }
+            
+            Products.Instance.AddRange(Business.Load(instance: ));
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {
@@ -42,7 +50,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
-            if (book.Product is Products) return View("EditProduct", new ProductEditModel(book));
+            if (book.Product != null) return View("EditProduct", new ProductEditModel(book));
             return View("Index");
         }
 
@@ -61,7 +69,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
-            if (book.Product is Products) Products.Instance.Remove(book);
+            if (book.Product != null) Products.Instance.Remove(book);
             return RedirectToAction("Index");
         }
 
@@ -70,7 +78,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
-            if (book.Product is Products) return View("ProductDetails", new ProductDetailsModel(book));
+            if (book.Product != null) return View("ProductDetails", new ProductDetailsModel(book));
             return View("Index");
         }
         [HttpPost]
@@ -80,6 +88,34 @@ namespace Soft.Controllers
             //TODO
             return RedirectToAction("Index");
         }
+
+    }
+
+    public class Business
+    {
+        public static void Save(Products instance)
+        {
+            var db = new OpenProduct();
+            db.Products.Add(instance);
+            db.SaveChanges();
+        }
+
+        public static List<Products> Load(Products instance)
+        {
+            var db = new OpenProduct();
+            return db.Products.ToList();
+        }
+    }
+
+    public class OpenProduct: DbContext
+    {
+        protected override void OnModelCreating(DbModelBuilder mb)
+        {
+            mb.Entity<Products>().ToTable("Products");
+            base.OnModelCreating(mb);
+        }
+
+        public DbSet<Products> Products { get; set; }
 
     }
 }

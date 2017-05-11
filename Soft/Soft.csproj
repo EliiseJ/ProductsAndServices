@@ -163,27 +163,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Blog.cs">
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BloggingModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BloggingModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BloggingModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Post.cs">
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ProductViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -235,27 +214,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\BloggingModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-      <LastGenOutput>BloggingModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\BloggingModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-      <LastGenOutput>BloggingModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\BloggingModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BloggingModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BloggingModel.edmx.diagram">
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

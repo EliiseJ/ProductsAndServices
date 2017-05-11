@@ -149,7 +149,7 @@
     <Compile Include="Archetypes\RuleClasses\VariableTests.cs" />
     <Compile Include="Archetypes\ValueClasses\ValueTests.cs" />
     <Compile Include="ClassTests.cs" />
-    <Compile Include="Data\DummyTests.cs" />
+    <Compile Include="Data\ProductTests.cs" />
     <Compile Include="IsAidsTested.cs" />
     <Compile Include="IsArchetypesTested.cs" />
     <Compile Include="IsDataTested.cs" />
