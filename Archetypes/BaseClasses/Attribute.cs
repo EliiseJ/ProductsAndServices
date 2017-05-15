@@ -1,8 +1,12 @@
-﻿using Open.Aids;
+﻿using System.ComponentModel.DataAnnotations;
+using Open.Aids;
 namespace Open.Archetypes.BaseClasses {
     public class Attribute : Archetype {
         private Archetypes<string> tags;
+
         private string entityId;
+
+        [Key]
         public string EntityId {
             get { return SetDefault(ref entityId); }
             set { SetValue(ref entityId, value); }

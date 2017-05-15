@@ -1,12 +1,20 @@
-﻿using Open.Aids;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Open.Aids;
 using Open.Archetypes.BaseClasses;
 
 namespace Open.Archetypes.ProductClasses
 {
     public class ProductInstance : BaseEntity<ProductType>
     {
+        public ProductInstance()
+        {
+            this.Valid.From = DateTime.Now;
+            this.Valid.To = DateTime.Now.AddDays(7);
+        }
+
         private string name;
-        private string serialNumber;
+        private int serialNumber;
         private decimal price;
         private Products product;
         public Products Product
@@ -15,8 +23,8 @@ namespace Open.Archetypes.ProductClasses
             set { SetValue(ref product, value); }
         }
 
-
-        public string SerialNumber
+        [Key]
+        public int SerialNumber
         {
             get { return SetDefault(ref serialNumber); }
             set { SetValue(ref serialNumber, value); }
@@ -59,9 +67,11 @@ namespace Open.Archetypes.ProductClasses
         protected override void SetRandomValues()
         {
             base.SetRandomValues();
+            
             name = GetRandom.String();
-            serialNumber = GetRandom.String();
-            price = GetRandom.Decimal();
+            price = GetRandom.Decimal(0, 1000);
+            this.Valid.From = DateTime.Now;
+            this.Valid.To = DateTime.Now.AddDays(7);
         }
     }
 }

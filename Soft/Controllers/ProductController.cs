@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Data.Entity;
 using Open.Logic.ProductClasses;
 using System.Web.Mvc;
@@ -16,17 +17,25 @@ namespace Soft.Controllers
         {
             if (!isCreated)
             {
-                Products.Instance.AddRange(Products.Random(5));
-                Business.Save(Products.Instance);
+                Products.Instance.AddRange(Products.Random(1,3));
+                foreach (var product in Products.Instance)
+                {
+                    Business.Save(product);
+                }
                 isCreated = true;
             }
-            
-            Products.Instance.AddRange(Business.Load(instance: ));
+
+            List<ProductInstance> dbProducts = Business.Load(Products.Instance);
             var model = new List<ProductViewModel>();
+            foreach (var p in dbProducts)
+            {
+                model.Add(new ProductViewModel(p));
+            }
             foreach (var p in Products.Instance)
             {
                 model.Add(new ProductViewModel(p));
             }
+
             return View(model);
         }
             public ActionResult AddBook()
@@ -42,6 +51,7 @@ namespace Soft.Controllers
             book.UniqueId = GetRandom.String();
             Products.Instance.Add(book);
             e.Update(book);
+            Business.Save(book);
             return RedirectToAction("Index");
         }
 
@@ -50,6 +60,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
+            Business.Save(book);
             if (book.Product != null) return View("EditProduct", new ProductEditModel(book));
             return View("Index");
         }
@@ -61,6 +72,7 @@ namespace Soft.Controllers
             var book = Products.Instance.Find(x => x.IsThisUniqueId(p.Id));
             if (book == null) return HttpNotFound();
             p.Update(book);
+            Business.Save(book);
             return RedirectToAction("Index");
         }
 
@@ -70,6 +82,7 @@ namespace Soft.Controllers
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
             if (book.Product != null) Products.Instance.Remove(book);
+            // TODO: Delete from Business
             return RedirectToAction("Index");
         }
 
@@ -93,14 +106,14 @@ namespace Soft.Controllers
 
     public class Business
     {
-        public static void Save(Products instance)
+        public static void Save(ProductInstance instance)
         {
             var db = new OpenProduct();
             db.Products.Add(instance);
             db.SaveChanges();
         }
 
-        public static List<Products> Load(Products instance)
+        public static List<ProductInstance> Load(Products instance)
         {
             var db = new OpenProduct();
             return db.Products.ToList();
@@ -111,11 +124,11 @@ namespace Soft.Controllers
     {
         protected override void OnModelCreating(DbModelBuilder mb)
         {
-            mb.Entity<Products>().ToTable("Products");
+            mb.Entity<ProductInstance>().ToTable("Products");
             base.OnModelCreating(mb);
         }
 
-        public DbSet<Products> Products { get; set; }
+        public DbSet<ProductInstance> Products { get; set; }
 
     }
 }
