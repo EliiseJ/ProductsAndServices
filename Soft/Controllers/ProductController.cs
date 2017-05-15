@@ -110,7 +110,7 @@ namespace Soft.Controllers
         {
             var db = new OpenProduct();
             db.Products.Add(instance);
-            db.SaveChanges();
+            // db.SaveChanges();
         }
 
         public static List<ProductInstance> Load(Products instance)
