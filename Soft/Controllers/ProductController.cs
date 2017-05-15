@@ -5,7 +5,6 @@ using Open.Archetypes.ProductClasses;
 using System.Net;
 using Open.Aids;
 using Open.Data;
-using System.Collections;
 
 namespace Soft.Controllers
 {
@@ -21,7 +20,7 @@ namespace Soft.Controllers
                 isCreated = true;
             }
 
-            Products.Instance.AddRange(Business.Load());
+            Products.Instance.Add(Business.Load());
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {

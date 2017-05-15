@@ -2,6 +2,7 @@
 using Open.Archetypes.BaseClasses;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace Open.Archetypes.ProductClasses
 {
@@ -16,12 +17,21 @@ namespace Open.Archetypes.ProductClasses
     {
         public static Products Instance { get; } = new Products();
 
+        public string UniqueId;
+        public string Name;
+        public string Genre;
+
         public static Products GetInstances(string uniqueId)
         {
             var r = new Products();
             var l = Instance.FindAll(x => x.TypeId == uniqueId);
             r.AddRange(l);
             return r;
+        }
+
+        public void Add(List<Products> list)
+        {
+            Instance.Add(list);
         }
 
         public static Products GetContent(string packageId)
