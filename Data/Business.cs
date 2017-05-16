@@ -46,9 +46,7 @@ namespace Open.Data
 
     public class ProductDal
     {
-        public ProductDal()
-        {
-        }
+        public ProductDal() { }
         public ProductDal(ProductInstance p)
         {
             Id = p.UniqueId;
@@ -60,12 +58,5 @@ namespace Open.Data
         public string Id { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
-
-        public void Update(Products u)
-        {
-            u.UniqueId = Id;
-            u.Name = Name;
-            u.Genre = Genre;
-        }
     }
 }
