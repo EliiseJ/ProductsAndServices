@@ -49,9 +49,9 @@ namespace Open.Data
         }
         public ProductDal(ProductInstance p)
         {
-            Id = p.Product.UniqueId;
-            Name = p.Product.Name;
-            Genre = p.Product.GetType().ToString();
+            Id = p.UniqueId;
+            Name = p.Name;
+            Genre = p.GetType().ToString();
         }
 
         [Key]
