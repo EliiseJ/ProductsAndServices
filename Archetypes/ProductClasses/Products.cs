@@ -2,7 +2,6 @@
 using Open.Archetypes.BaseClasses;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using System.Collections.Generic;
 
 namespace Open.Archetypes.ProductClasses
 {

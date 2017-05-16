@@ -10,14 +10,15 @@ namespace Soft.Controllers
 {
     public class ProductController : Controller
     {
-        private static bool isCreated;
+        //private static bool isCreated;
         public ActionResult Index()
         {
-            if (!isCreated)
-            {
-                Business.Save(Products.Random(5));
-                isCreated = true;
-            }
+            // Kui ei taha Random raamatuid!
+            //if (!isCreated)
+            //{
+            //    Business.Save(Products.Random(5));
+            //    isCreated = true;
+            //}
 
             Products.Instance.AddRange(Business.Load());
             var model = new List<ProductViewModel>();
