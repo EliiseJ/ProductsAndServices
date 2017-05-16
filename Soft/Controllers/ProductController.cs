@@ -15,12 +15,11 @@ namespace Soft.Controllers
         {
             if (!isCreated)
             {
-                Products.Instance.AddRange(Products.Random(5));
-                Business.Save(Products.Instance);
+                Business.Save(Products.Random(5));
                 isCreated = true;
             }
 
-            Products.Instance.Add(Business.Load());
+            Products.Instance.AddRange(Business.Load());
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {

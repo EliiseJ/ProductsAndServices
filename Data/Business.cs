@@ -17,14 +17,16 @@ namespace Open.Data
             db.SaveChanges();
         }
 
-        public static List<Products> Load()
+        public static List<ProductInstance> Load()
         {
             var db = new ProductBook();
-            var list = new List<Products>();
+            var list = new List<ProductInstance>();
             foreach (var u in db.Products)
             {
-                var au = new Products();
-                u.Update(au);
+                var au = new ProductInstance();
+                au.UniqueId = u.Id;
+                au.Name = u.Name;
+                au.TypeId = u.Genre;
                 list.Add(au);
             }
             return list;
@@ -51,7 +53,7 @@ namespace Open.Data
         {
             Id = p.UniqueId;
             Name = p.Name;
-            Genre = p.GetType().ToString();
+            Genre = p.TypeId;
         }
 
         [Key]

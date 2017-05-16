@@ -15,7 +15,7 @@ namespace Open.Archetypes.ProductClasses
 
     public class Products : Archetypes<ProductInstance>
     {
-        public static Products Instance = new Products();
+        public static Products Instance { get; } = new Products();
 
         public string UniqueId;
         public string Name;
@@ -27,15 +27,6 @@ namespace Open.Archetypes.ProductClasses
             var l = Instance.FindAll(x => x.TypeId == uniqueId);
             r.AddRange(l);
             return r;
-        }
-
-        public void AddList(List<ProductInstance> list)
-        {
-            foreach (ProductInstance instance in list)
-            {
-                Instance.Add((ProductInstance) instance);
-            }
-           
         }
 
         public static Products GetContent(string packageId)
