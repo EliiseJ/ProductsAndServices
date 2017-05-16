@@ -75,8 +75,10 @@
     <Compile Include="OrderClasses\Order.cs" />
     <Compile Include="PartyClasses\Party.cs" />
     <Compile Include="ProcessClasses\Process.cs" />
+    <Compile Include="ProductClasses\CanceledService.cs" />
     <Compile Include="ProductClasses\CatalogEntry.cs" />
     <Compile Include="ProductClasses\CatalogEntries.cs" />
+    <Compile Include="ProductClasses\CompletedService.cs" />
     <Compile Include="ProductClasses\ExecutingService.cs" />
     <Compile Include="ProductClasses\PackageInstance.cs" />
     <Compile Include="ProductClasses\PackageTypes.cs" />
