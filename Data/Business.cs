@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using Open.Archetypes.ProductClasses;
 
 namespace Open.Data
 {
     public class Business: DbContext
     {
-        public static void Save(Products instance)
+        private static ProductBook db = new ProductBook();
+
+        public static void SaveProducts(Products instance)
         {
-            var db = new ProductBook();
             foreach (var i in instance)
             {
                 db.Products.Add(new ProductDal(i));
@@ -17,9 +20,28 @@ namespace Open.Data
             db.SaveChanges();
         }
 
+        public static void SaveProductInstance(ProductInstance instance)
+        {
+            db.Products.Add(new ProductDal(instance));
+            db.SaveChanges();
+        }
+
+        public static void DeleteProductInstance(ProductInstance instance)
+        {
+            ProductDal dbProductDal = db.Products.Find(instance.UniqueId);
+            if (dbProductDal == null)
+            {
+                Console.WriteLine("Couldn't find entity to delete!");
+            }
+            else
+            {
+                db.Products.Remove(entity: dbProductDal);
+                db.SaveChanges();
+            }
+        }
+
         public static List<ProductInstance> Load()
         {
-            var db = new ProductBook();
             var list = new List<ProductInstance>();
             foreach (var u in db.Products)
             {
@@ -30,6 +52,22 @@ namespace Open.Data
                 list.Add(au);
             }
             return list;
+        }
+
+        public static void UpdateProductInstance(ProductInstance instance)
+        {
+            ProductDal dbProductDal = db.Products.Find(instance.UniqueId);
+            if (dbProductDal == null)
+            {
+                Console.WriteLine("Couldn't find entity to update!");
+            }
+            else
+            {
+                dbProductDal.Name = instance.Name;
+                dbProductDal.Genre = instance.TypeId;
+                db.Products.AddOrUpdate(dbProductDal);
+                db.SaveChanges();
+            }
         }
     }
 

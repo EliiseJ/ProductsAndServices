@@ -10,17 +10,11 @@ namespace Soft.Controllers
 {
     public class ProductController : Controller
     {
-        //private static bool isCreated;
         public ActionResult Index()
         {
-            // Kui ei taha Random raamatuid!
-            //if (!isCreated)
-            //{
-            //    Business.Save(Products.Random(5));
-            //    isCreated = true;
-            //}
-
+            Products.Instance.Clear();
             Products.Instance.AddRange(Business.Load());
+            
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
             {
@@ -39,8 +33,8 @@ namespace Soft.Controllers
             if (!ModelState.IsValid) return View("AddBook", e);
             var book = new ProductInstance { Product = new Products() };
             book.UniqueId = GetRandom.String();
-            Products.Instance.Add(book);
             e.Update(book);
+            Business.SaveProductInstance(book);
             return RedirectToAction("Index");
         }
 
@@ -60,6 +54,7 @@ namespace Soft.Controllers
             var book = Products.Instance.Find(x => x.IsThisUniqueId(p.Id));
             if (book == null) return HttpNotFound();
             p.Update(book);
+            Business.UpdateProductInstance(book);
             return RedirectToAction("Index");
         }
 
@@ -68,7 +63,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
-            if (book.Product != null) Products.Instance.Remove(book);
+            if (book.Product != null) Business.DeleteProductInstance(book);
             return RedirectToAction("Index");
         }
 
