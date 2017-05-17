@@ -82,6 +82,12 @@ namespace Soft.Controllers
             //TODO
             return RedirectToAction("Index");
         }
+        public ActionResult ReturnBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
+        {
+            if (!ModelState.IsValid) return View("ReturnBook", e);
+            //TODO
+            return RedirectToAction("Index");
+        }
 
     }
 }
