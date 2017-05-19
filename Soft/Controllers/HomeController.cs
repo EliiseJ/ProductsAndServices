@@ -22,5 +22,12 @@ namespace Soft.Controllers
 
             return View();
         }
+
+        public ActionResult Customer()
+        {
+            ViewBag.Message = "Customer Page";
+
+            return View();
+        }
     }
 }

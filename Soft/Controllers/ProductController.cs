@@ -75,7 +75,6 @@ namespace Soft.Controllers
             if (book.Product != null) return View("ProductDetails", new ProductDetailsModel(book));
             return View("Index");
         }
-        [HttpPost]
         public ActionResult LendBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
         {
             if (!ModelState.IsValid) return View("LendBook", e);
