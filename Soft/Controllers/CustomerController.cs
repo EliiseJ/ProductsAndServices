@@ -44,7 +44,7 @@ namespace Soft.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditProduct([Bind(Include = "Id,Name,Genre")] ContactEditModel c)
+        public ActionResult EditCustomer([Bind(Include = "Id,Name,Genre")] ContactEditModel c)
         {
             if (!ModelState.IsValid) return View("EditCustomer", c);
             var contact = Contacts.Instance.Find(x => x.IsThisUniqueId(c.Id));
@@ -63,7 +63,7 @@ namespace Soft.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details(string id)
+        public ActionResult CustomerDetails(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var contact = Contacts.Instance.Find(x => x.IsThisUniqueId(id));
