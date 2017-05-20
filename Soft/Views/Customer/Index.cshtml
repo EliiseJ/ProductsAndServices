@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Open.Logic.ContactClasses.ContactViewModel>
+@{
+    ViewBag.Title = "Customers";
+}
+<script>
+    $(document).ready(function () {
+        var url = "";
+
+        $("#dialog-confirm").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 170,
+            width: 350,
+            show: { effect: 'drop', direction: "up" },
+            modal: true,
+            draggable: true,
+            open: function (event, ui) {
+                $(".ui-dialog-titlebar-close").hide();
+
+            },
+            buttons: {
+                "OK": function () {
+                    $(this).dialog("close");
+                    window.location.href = url;
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $('body').on("click", ".lnkDelete", function () {
+            console.log("asdasd");
+            // e.preventDefault(); use this or return false
+            url = $(this).attr('href');
+            $("#dialog-confirm").dialog('open');
+
+            return false;
+        });
+    });
+</script>
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+<h2>Customers</h2>
+<p>
+    Add New
+    @Html.ActionLink("Customer", "AddCustomer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+        </th>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "lnkDelete" })
+            </td>
+        </tr>
+        }
+    </table>

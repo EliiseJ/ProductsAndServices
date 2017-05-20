@@ -13,7 +13,7 @@ namespace Soft.Controllers
         public ActionResult Index()
         {
             Products.Instance.Clear();
-            Products.Instance.AddRange(Business.Load());
+            Products.Instance.AddRange(BusinessProduct.Load());
             
             var model = new List<ProductViewModel>();
             foreach (var p in Products.Instance)
@@ -27,6 +27,7 @@ namespace Soft.Controllers
             var b = new ProductEditModel();
             return View("AddBook", b);
         }
+
         [HttpPost]
         public ActionResult AddBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
         {
@@ -34,7 +35,7 @@ namespace Soft.Controllers
             var book = new ProductInstance { Product = new Products() };
             book.UniqueId = GetRandom.String();
             e.Update(book);
-            Business.SaveProductInstance(book);
+            BusinessProduct.SaveProductInstance(book);
             return RedirectToAction("Index");
         }
 
@@ -54,7 +55,7 @@ namespace Soft.Controllers
             var book = Products.Instance.Find(x => x.IsThisUniqueId(p.Id));
             if (book == null) return HttpNotFound();
             p.Update(book);
-            Business.UpdateProductInstance(book);
+            BusinessProduct.UpdateProductInstance(book);
             return RedirectToAction("Index");
         }
 
@@ -63,7 +64,7 @@ namespace Soft.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var book = Products.Instance.Find(x => x.IsThisUniqueId(id));
             if (book == null) return HttpNotFound();
-            if (book.Product != null) Business.DeleteProductInstance(book);
+            if (book.Product != null) BusinessProduct.DeleteProductInstance(book);
             return RedirectToAction("Index");
         }
 

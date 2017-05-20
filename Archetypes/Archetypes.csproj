@@ -69,7 +69,8 @@
     <Compile Include="BaseClasses\Serializable.cs" />
     <Compile Include="BaseClasses\TemporalEntity.cs" />
     <Compile Include="BaseClasses\UniqueEntity.cs" />
-    <Compile Include="ContactClasses\Contact.cs" />
+    <Compile Include="ContactClasses\ContactInstance.cs" />
+    <Compile Include="ContactClasses\Contacts.cs" />
     <Compile Include="InventoryClasses\Inventory.cs" />
     <Compile Include="MoneyClasses\Money.cs" />
     <Compile Include="OrderClasses\Order.cs" />

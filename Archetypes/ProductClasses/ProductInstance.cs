@@ -8,7 +8,9 @@ namespace Open.Archetypes.ProductClasses
         private string name;
         private string serialNumber;
         private decimal price;
+        private string packageId;
         private Products product;
+
         public Products Product
         {
             get { return SetDefault(ref product); }
@@ -21,17 +23,18 @@ namespace Open.Archetypes.ProductClasses
             get { return SetDefault(ref serialNumber); }
             set { SetValue(ref serialNumber, value); }
         }
+
         public string Name
         {
             get { return SetDefault(ref name); }
             set { SetValue(ref name, value); }
         }
+
         public decimal Price
         {
             get { return SetDefault(ref price); }
             set { SetValue(ref price, value); }
         }
-        private string packageId;
 
         public string PackageId
         {
@@ -49,6 +52,7 @@ namespace Open.Archetypes.ProductClasses
             if (i == 2) return PackageInstance.Random();
             return ProductInstance.Random();
         }
+
         public static ProductInstance Random()
         {
             var e = new ProductInstance();

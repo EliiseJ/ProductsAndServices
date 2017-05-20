@@ -7,7 +7,7 @@ using Open.Archetypes.ProductClasses;
 
 namespace Open.Data
 {
-    public class Business: DbContext
+    public class BusinessProduct: DbContext
     {
         private static ProductBook db = new ProductBook();
 

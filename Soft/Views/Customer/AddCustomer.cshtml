@@ -1,9 +1,9 @@
-﻿@model Open.Logic.ProductClasses.ProductEditModel
+﻿@model Open.Logic.ContactClasses.ContactEditModel
 @{
     ViewBag.Title = "AddCustomer";
 }
-<h2>Add Book</h2>
-@using (Html.BeginForm("Customer", "Product", FormMethod.Post))
+<h2>Add Customer</h2>
+@using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
 {
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default"/>
             </div>
         </div>
     </div>
