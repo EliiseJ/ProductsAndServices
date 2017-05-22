@@ -1,10 +1,13 @@
-﻿using Open.Archetypes.ContactClasses;
+﻿using System.ComponentModel.DataAnnotations;
+using Open.Archetypes.ContactClasses;
 
 namespace Open.Logic.ContactClasses
 {
     public class ContactEditModel
     {
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string Id { get; set; }
 
