@@ -22,7 +22,11 @@ namespace Soft.Controllers
             }
             return View(model);
         }
-
+        public ActionResult AddCustomer()
+        {
+            var b = new ContactEditModel();
+            return View("AddCustomer", b);
+        }
         [HttpPost]
         public ActionResult AddCustomer([Bind(Include = "Id,FirstName,LastName")] ContactEditModel e)
         {
@@ -44,7 +48,7 @@ namespace Soft.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditCustomer([Bind(Include = "Id,Name,Genre")] ContactEditModel c)
+        public ActionResult EditCustomer([Bind(Include = "Id,FirstName,LastName")] ContactEditModel c)
         {
             if (!ModelState.IsValid) return View("EditCustomer", c);
             var contact = Contacts.Instance.Find(x => x.IsThisUniqueId(c.Id));
