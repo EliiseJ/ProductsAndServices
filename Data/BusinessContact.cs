@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.Migrations;
+using System.Web.Mvc;
 
 namespace Open.Data
 {
@@ -50,6 +51,21 @@ namespace Open.Data
                 au.FirstName = u.FirstName;
                 au.LastName = u.LastName;
                 list.Add(au);
+            }
+            return list;
+        }
+
+        public static List<SelectListItem> GetContacts()
+        {
+            var list = new List<SelectListItem>();
+            foreach (var u in db.Contacts)
+            {
+                var item = new SelectListItem
+                {
+                    Value = u.Id,
+                    Text = u.FirstName + " " + u.LastName
+                };
+                list.Add(item);
             }
             return list;
         }

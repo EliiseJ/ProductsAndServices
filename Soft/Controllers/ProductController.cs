@@ -4,7 +4,9 @@ using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 using System.Net;
 using Open.Aids;
+using Open.Archetypes.ContactClasses;
 using Open.Data;
+using Open.Logic.ContactClasses;
 
 namespace Soft.Controllers
 {
@@ -82,11 +84,13 @@ namespace Soft.Controllers
             //TODO
             return RedirectToAction("Index");
         }
-        public ActionResult ReturnBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
+        public ActionResult ReturnBook()
         {
-            if (!ModelState.IsValid) return View("ReturnBook", e);
-            //TODO
-            return RedirectToAction("Index");
+
+            var model = new ReturnBookModel();
+            model.Contacts = BusinessContact.GetContacts();
+
+            return View("ReturnBook", model);
         }
 
     }
