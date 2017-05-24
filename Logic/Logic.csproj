@@ -81,6 +81,7 @@
     <Compile Include="ContactClasses\ContactDetailsModel.cs" />
     <Compile Include="ContactClasses\ContactEditModel.cs" />
     <Compile Include="ContactClasses\ContactViewModel.cs" />
+    <Compile Include="ProductClasses\LendBookModel.cs" />
     <Compile Include="ProductClasses\ProductDetailsModel.cs" />
     <Compile Include="ProductClasses\ProductEditModel.cs" />
     <Compile Include="ProductClasses\ProductViewModel.cs" />

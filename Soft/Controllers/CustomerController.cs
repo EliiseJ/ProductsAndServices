@@ -67,7 +67,6 @@ namespace Soft.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
         public ActionResult CustomerDetails(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -78,11 +78,13 @@ namespace Soft.Controllers
             if (book.Product != null) return View("ProductDetails", new ProductDetailsModel(book));
             return View("Index");
         }
-        public ActionResult LendBook([Bind(Include = "Id,Name,Genre")] ProductEditModel e)
+        public ActionResult LendBook([Bind(Include = "Id,Name,Genre,FirstName,LastName")] LendBookModel e)
         {
             if (!ModelState.IsValid) return View("LendBook", e);
-            //TODO
-            return RedirectToAction("Index");
+            var model = new LendBookModel();
+            model.Products = BusinessProduct.GetProducts();
+            model.Contacts = BusinessContact.GetContacts();
+            return View("LendBook", model);
         }
         public ActionResult ReturnBook()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 
 namespace Open.Data
@@ -50,6 +51,20 @@ namespace Open.Data
                 au.Name = u.Name;
                 au.TypeId = u.Genre;
                 list.Add(au);
+            }
+            return list;
+        }
+        public static List<SelectListItem> GetProducts()
+        {
+            var list = new List<SelectListItem>();
+            foreach (var u in db.Products)
+            {
+                var item = new SelectListItem
+                {
+                    Value = u.Id,
+                    Text = u.Name
+                };
+                list.Add(item);
             }
             return list;
         }
