@@ -10,7 +10,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Contacts, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.SelectedCustomerId, Model.Contacts)
+                @Html.DropDownListFor(model => model.SelectedCustomerId, Model.Contacts, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Contacts, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -18,13 +18,13 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Products, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.SelectedProductId, Model.Products)
+                    @Html.DropDownListFor(model => model.SelectedProductId, Model.Products, new { @class = "form-control"})
                     @Html.ValidationMessageFor(model => model.Products, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    @Html.ActionLink("Lend", "CustomerDetails", "Customer", new { id = Model.SelectedCustomerId }, null)
+                    <input type="submit" value="Lend" class="btn btn-default" />
                 </div>
             </div>
         </div>

@@ -24,7 +24,30 @@
             </p>
         </div>
     </div>
+    @if (Model.LendedBooks.Count > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    Lended Books
+                </th>
+                <th>
+                </th>
+                @foreach (var item in Model.LendedBooks)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Return", "ReturnBookImpl", "Product", new { id = item.UniqueId, customerId = Model.CustomerId }, null)
+                    </td>
+                </tr>
+                }
 
+            </table>
+    }
+    
 </div>
 
 <div>

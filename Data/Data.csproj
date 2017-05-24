@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="BusinessContact.cs" />
     <Compile Include="BusinessProduct.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

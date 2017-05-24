@@ -3,6 +3,7 @@ using Open.Logic.ProductClasses;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 using System.Net;
+using System.Web.Routing;
 using Open.Aids;
 using Open.Archetypes.ContactClasses;
 using Open.Data;
@@ -78,13 +79,25 @@ namespace Soft.Controllers
             if (book.Product != null) return View("ProductDetails", new ProductDetailsModel(book));
             return View("Index");
         }
-        public ActionResult LendBook([Bind(Include = "Id,Name,Genre,FirstName,LastName")] LendBookModel e)
+        public ActionResult LendBook()
         {
-            if (!ModelState.IsValid) return View("LendBook", e);
+            if (!ModelState.IsValid) return View("LendBook");
             var model = new LendBookModel();
             model.Products = BusinessProduct.GetProducts();
             model.Contacts = BusinessContact.GetContacts();
             return View("LendBook", model);
+        }
+
+        [HttpPost]
+        public ActionResult LendBook(LendBookModel e)
+        {
+            if (!ModelState.IsValid) return View("LendBook");
+
+            BusinessProduct.LendBook(e.SelectedProductId, e.SelectedCustomerId);
+
+            RouteValueDictionary routeValueDictionary = new RouteValueDictionary();
+            routeValueDictionary.Add("id", e.SelectedCustomerId);
+            return RedirectToAction("CustomerDetails", "Customer", routeValueDictionary);
         }
         public ActionResult ReturnBook()
         {
@@ -95,5 +108,12 @@ namespace Soft.Controllers
             return View("ReturnBook", model);
         }
 
+        public ActionResult ReturnBookImpl(string id, string customerId)
+        {
+            BusinessProduct.ReturnBook(id);
+            RouteValueDictionary routeValueDictionary = new RouteValueDictionary();
+            routeValueDictionary.Add("id", customerId);
+            return RedirectToAction("CustomerDetails", "Customer", routeValueDictionary);
+        }
     }
 }

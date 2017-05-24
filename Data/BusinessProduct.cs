@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Web.Mvc;
 using Open.Archetypes.ProductClasses;
 
@@ -54,10 +55,25 @@ namespace Open.Data
             }
             return list;
         }
+
+        public static List<ProductInstance> GetCustomerLendedBooks(string customerId)
+        {
+            var list = new List<ProductInstance>();
+            foreach (var u in db.Products.SqlQuery("SELECT * FROM dbo.Books WHERE CustomerId = @id", new SqlParameter("@id", customerId)))
+            {
+                var au = new ProductInstance();
+                au.UniqueId = u.Id;
+                au.Name = u.Name;
+                au.TypeId = u.Genre;
+                list.Add(au);
+            }
+            return list;
+        }
+
         public static List<SelectListItem> GetProducts()
         {
             var list = new List<SelectListItem>();
-            foreach (var u in db.Products)
+            foreach (var u in db.Products.SqlQuery("SELECT * FROM dbo.Books WHERE CustomerId = ''"))
             {
                 var item = new SelectListItem
                 {
@@ -84,6 +100,36 @@ namespace Open.Data
                 db.SaveChanges();
             }
         }
+
+        public static void LendBook(string bookId, string customerId)
+        {
+            ProductDal dbProductDal = db.Products.Find(bookId);
+            if (dbProductDal == null)
+            {
+                Console.WriteLine("Couldn't find entity to update!");
+            }
+            else
+            {
+                dbProductDal.CustomerId = customerId;
+                db.Products.AddOrUpdate(dbProductDal);
+                db.SaveChanges();
+            }
+        }
+
+        public static void ReturnBook(string bookId)
+        {
+            ProductDal dbProductDal = db.Products.Find(bookId);
+            if (dbProductDal == null)
+            {
+                Console.WriteLine("Couldn't find entity to update!");
+            }
+            else
+            {
+                dbProductDal.CustomerId = "";
+                db.Products.AddOrUpdate(dbProductDal);
+                db.SaveChanges();
+            }
+        }
     }
 
     public class ProductBook : DbContext
@@ -105,11 +151,13 @@ namespace Open.Data
             Id = p.UniqueId;
             Name = p.Name;
             Genre = p.TypeId;
+            CustomerId = "";
         }
 
         [Key]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
+        public string CustomerId { get; set; }
     }
 }

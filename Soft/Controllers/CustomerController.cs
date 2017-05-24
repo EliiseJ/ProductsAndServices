@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using Open.Data;
 using Open.Archetypes.ContactClasses;
 using Open.Aids;
+using Open.Logic.ProductClasses;
 
 namespace Soft.Controllers
 {
@@ -70,10 +71,26 @@ namespace Soft.Controllers
         public ActionResult CustomerDetails(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Contacts.Instance.Clear();
+            Contacts.Instance.AddRange(BusinessContact.Load());
             var contact = Contacts.Instance.Find(x => x.IsThisUniqueId(id));
             if (contact == null) return HttpNotFound();
-            if (contact.Contact != null) return View("CustomerDetails", new ContactDetailsModel(contact));
+            ContactDetailsModel model = new ContactDetailsModel(contact);
+            model.LendedBooks = BusinessProduct.GetCustomerLendedBooks(id);
+            if (contact.Contact != null) return View("CustomerDetails", model);
             return View("Index");
+        }
+
+        public ActionResult CustomerDetailsFromReturn(ReturnBookModel model)
+        {
+            if (model.SelectedCustomerId == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return CustomerDetails(model.SelectedCustomerId);
+        }
+
+        public ActionResult CustomerDetailsFromLend(LendBookModel model)
+        {
+            if (model.SelectedCustomerId == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return CustomerDetails(model.SelectedCustomerId);
         }
     }
 }

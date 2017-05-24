@@ -1,7 +1,6 @@
-﻿using Open.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using Open.Archetypes.ContactClasses;
 
 namespace Open.Logic.ProductClasses
 {
@@ -12,6 +11,8 @@ namespace Open.Logic.ProductClasses
         }
 
         public string SelectedCustomerId { get; set; }
+
+        [Display(Name = "Customers")]
         public IEnumerable<SelectListItem> Contacts { get; set; }
     }
 }

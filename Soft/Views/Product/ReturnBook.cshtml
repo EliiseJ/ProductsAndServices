@@ -3,20 +3,20 @@
     ViewBag.Title = "Return a Book";
 }
 <h2>Return a Book</h2>
-@using (Html.BeginForm("CustomerDetails", "Customer", FormMethod.Post))
+@using (Html.BeginForm("CustomerDetailsFromReturn", "Customer", FormMethod.Post))
 {
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Contacts, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.SelectedCustomerId, Model.Contacts)
+                @Html.DropDownListFor(model => model.SelectedCustomerId, Model.Contacts, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Contacts, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.ActionLink("OK", "CustomerDetails", "Customer", new { id = Model.SelectedCustomerId }, null)
+                <input type="submit" value="OK" class="btn btn-default" />
             </div>
         </div>
     </div>
